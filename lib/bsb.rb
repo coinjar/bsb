@@ -19,8 +19,8 @@ module BSB
         postcode: array[5],
         flags: {
           paper: (array[6][0] == "P"),
-          electronic: (array[6][0] == "E"),
-          high_value: (array[6][0] == "H")
+          electronic: (array[6][1] == "E"),
+          high_value: (array[6][2] == "H")
         }
       }
     end
@@ -36,12 +36,13 @@ module BSB
       str.gsub(/[^\d]/, '')
     end
 
+    private
     def data_hash
-      JSON.parse(IO.read(File.expand_path("../../config/bsb_db.json", __FILE__)))
+      @data_hash ||= JSON.parse(IO.read(File.expand_path("../../config/bsb_db.json", __FILE__)))
     end
 
     def bank_list
-      JSON.parse(IO.read(File.expand_path("../../config/bsb_bank_list.json", __FILE__)))
+      @bank_list ||= JSON.parse(IO.read(File.expand_path("../../config/bsb_bank_list.json", __FILE__)))
     end
   end
 end
