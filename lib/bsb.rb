@@ -1,5 +1,6 @@
 require 'bsb/version'
 require 'json'
+require 'bsb_number_validator'
 
 module BSB
   class << self
