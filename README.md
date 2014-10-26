@@ -32,6 +32,8 @@ You will get a hash back, including the highly-useful full bank name which can b
 {:bsb=>"012003", :mnemonic=>"ANZ", :bank_name=>"Australia & New Zealand Banking Group Limited", :branch=>"115 Pitt St Sydney", :address=>"115 Pitt St", :suburb=>"Sydney", :state=>"NSW", :postcode=>"2000", :flags=>{:paper=>true, :electronic=>true, :high_value=>true}}
 ```
 
+BSB lookup with this gem is extremely performant. A decent MacBook Pro can easily run 100,000 lookups a second.
+
 ### Normalisation
 
 There's a public method for you to normalise a BSB number from a variety of formats, for example:
