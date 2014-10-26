@@ -7,6 +7,7 @@ module BSB
     def lookup(number)
       bsb = normalize(number)
       array = data_hash[bsb]
+      return nil if array.nil?
       result = {
         bsb: bsb,
         mnemonic: array[0],
