@@ -12,9 +12,10 @@ module BSB
 
     def self.load_file(filename)
       require 'net/ftp'
-      ftp = Net::FTP.new('apca.com.au')
+      ftp = Net::FTP.new('bsb.hostedftp.com')
       ftp.login
       ftp.passive = true
+      ftp.chdir('~auspaynetftp/BSB')
       content = ftp.gettextfile(filename, nil)
       hash = {}
       content.each_line do |line|
