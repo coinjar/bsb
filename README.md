@@ -68,6 +68,23 @@ Two data sources are used:
 
 Other formats of APCA BSB data is available from http://bsb.apca.com.au.
 
+### How to update from sources
+
+#### Full BSB & bank address list
+
+1. Go to http://bsb.apca.com.au/
+2. Click on the **TEXT** link for the full version
+3. Extract the filename (e.g `BSBDirectoryOct18-271.txt`)
+4. Run: `bundle exec rake bsb:generate_database filename=BSBDirectoryOct18-271.txt > config/bsb_db.json` (Changing the filename as necessary)
+
+#### BSB & bank name list
+
+1. Go to http://bsb.apca.com.au/
+2. Click on **FTP** (be patient it takes a while to load)
+3. Find the latest file with the following pattern: `KEY TO ABBREVIATIONS AND BSB NUMBERS (MMM YYYY).csv`
+4. Copy the file link and replace `ftp` with `http`
+5. Run: `bundle exec rake bsb:generate_bank_list url='http://bsb.hostedftp.com/~auspaynetftp/BSB/KEY%20TO%20ABBREVIATIONS%20AND%20BSB%20NUMBERS%20(Oct%202018).csv' > config/bsb_bank_list.json` (Changing the filename as necessary)
+
 ## Contributing
 
 1. Fork it ( https://github.com/zhoutong/bsb/fork )
