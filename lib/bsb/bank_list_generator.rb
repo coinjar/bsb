@@ -9,7 +9,7 @@ module BSB
     end
 
     def json
-      JSON.dump(@hash)
+      JSON.pretty_generate(@hash)
     end
 
     def self.load_file(url)
