@@ -75,9 +75,11 @@ Other formats of APCA BSB data is available from http://bsb.apca.com.au.
 #### Full BSB & bank address list
 
 1. Go to http://bsb.apca.com.au/
-2. Click on the **TEXT** link for the full version
-3. Extract the filename (e.g `BSBDirectoryOct18-271.txt`)
-4. Run: `bundle exec rake bsb:generate_database filename=BSBDirectoryOct18-271.txt > config/bsb_db.json` (Changing the filename as necessary)
+2. Click on the Download BSB Files button
+3. Click on the **TEXT** link for the full version
+4. Extract the filename (e.g `BSBDirectoryOct18-271.txt`)
+5. Run: `bundle exec rake bsb:generate_database filename=BSBDirectoryOct18-271.txt > config/bsb_db.json` (Changing the filename as necessary)
+6. Update version number in `/lib/bsb/version.rb` file
 
 #### BSB & bank name list
 
