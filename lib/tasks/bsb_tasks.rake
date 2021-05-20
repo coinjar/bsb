@@ -11,6 +11,7 @@ namespace :bsb do
     end
   end
 
+  desc "Generate JSON-formatted bank list from APCA BSB directory"
   task :generate_bank_list do
     require 'bsb/bank_list_generator'
     if url = ENV['url']
