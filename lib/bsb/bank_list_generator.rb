@@ -1,6 +1,6 @@
 require 'json'
-require 'rest-client'
 require 'csv'
+require 'auspaynet/client'
 
 module BSB
   class BankListGenerator
@@ -12,9 +12,10 @@ module BSB
       JSON.dump(@hash)
     end
 
-    def self.load_file(url)
+    def self.load_file(filename)
+      client = ::Auspaynet::Client.new('bsb.hostedftp.com')
+      content = client.get('~auspaynetftp/BSB', filename)
       hash = {}
-      content = RestClient.get(url)
       CSV.parse(content) do |row|
         row[2].split(", ").each do |prefix|
           prefix = prefix.chomp.rjust(2, "0")
