@@ -1,5 +1,6 @@
 require 'json'
 require 'csv'
+require 'net/http'
 
 module BSB
   class BankListGenerator
