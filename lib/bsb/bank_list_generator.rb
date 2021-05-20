@@ -1,6 +1,6 @@
 require 'json'
 require 'csv'
-require 'net/http'
+require 'auspaynet/client'
 
 module BSB
   class BankListGenerator
@@ -13,12 +13,8 @@ module BSB
     end
 
     def self.load_file(filename)
-      require 'net/ftp'
-      ftp = Net::FTP.new('bsb.hostedftp.com')
-      ftp.login
-      ftp.passive = true
-      ftp.chdir('~auspaynetftp/BSB')
-      content = ftp.gettextfile(filename, nil)
+      client = ::Auspaynet::Client.new('bsb.hostedftp.com')
+      content = client.get('~auspaynetftp/BSB', filename)
       hash = {}
       CSV.parse(content) do |row|
         row[2].split(", ").each do |prefix|

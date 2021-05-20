@@ -1,4 +1,5 @@
 require 'json'
+require 'auspaynet/client'
 
 module BSB
   class DatabaseGenerator
@@ -11,12 +12,8 @@ module BSB
     end
 
     def self.load_file(filename)
-      require 'net/ftp'
-      ftp = Net::FTP.new('bsb.hostedftp.com')
-      ftp.login
-      ftp.passive = true
-      ftp.chdir('~auspaynetftp/BSB')
-      content = ftp.gettextfile(filename, nil)
+      client = ::Auspaynet::Client.new('bsb.hostedftp.com')
+      content = client.get('~auspaynetftp/BSB', filename)
       hash = {}
       content.each_line do |line|
         next if line[3] != "-"
