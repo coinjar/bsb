@@ -15,24 +15,13 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
     concurrent-ruby (1.1.8)
-    crack (0.4.5)
-      rexml
-    hashdiff (1.0.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     minitest (5.14.4)
-    public_suffix (4.0.6)
     rake (13.0.1)
-    rexml (3.2.5)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    webmock (3.12.2)
-      addressable (>= 2.3.6)
-      crack (>= 0.3.2)
-      hashdiff (>= 0.4.0, < 2.0.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -42,7 +31,6 @@ DEPENDENCIES
   bsb!
   bundler (~> 2.0)
   rake (~> 13.0)
-  webmock
 
 BUNDLED WITH
    2.1.4
