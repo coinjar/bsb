@@ -12,10 +12,15 @@ module BSB
       JSON.dump(@hash)
     end
 
-    def self.load_file(url)
+    def self.load_file(filename)
+      require 'net/ftp'
+      ftp = Net::FTP.new('bsb.hostedftp.com')
+      ftp.login
+      ftp.passive = true
+      ftp.chdir('~auspaynetftp/BSB')
+      content = ftp.gettextfile(filename, nil)
       hash = {}
-      response = Net::HTTP.get(URI(url))
-      CSV.parse(response) do |row|
+      CSV.parse(content) do |row|
         row[2].split(", ").each do |prefix|
           prefix = prefix.chomp.rjust(2, "0")
           hash[prefix] = row[1]

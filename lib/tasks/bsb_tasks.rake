@@ -14,12 +14,12 @@ namespace :bsb do
   desc "Generate JSON-formatted bank list from APCA BSB directory"
   task :generate_bank_list do
     require 'bsb/bank_list_generator'
-    if url = ENV['url']
+    if filename = ENV['filename']
       STDERR.puts "Loading Bank List file... (This may take a while)"
-      bsb_bl_gen = BSB::BankListGenerator.load_file(url)
+      bsb_bl_gen = BSB::BankListGenerator.load_file(filename)
       puts bsb_bl_gen.json
     else
-      STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list url='http://bsb.apca.com.au/public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(july2014).csv' > config/bsb_bank_list.json`"
+      STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list filename='KEY TO ABBREVIATIONS AND BSB NUMBERS (Apr 2020).csv' > config/bsb_bank_list.json`"
     end
   end
 end
