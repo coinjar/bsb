@@ -24,5 +24,10 @@ module BSB
       end
       new(hash)
     end
+
+    def self.latest_file(matching_filename:, file_format:)
+      client = ::Auspaynet::Client.new('bsb.hostedftp.com')
+      client.list(dir: '~auspaynetftp/BSB', matching_filename:, file_format:)&.last
+    end
   end
 end

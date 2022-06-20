@@ -22,4 +22,21 @@ namespace :bsb do
       STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list filename='KEY TO ABBREVIATIONS AND BSB NUMBERS (May 2022).csv' > config/bsb_bank_list.json`"
     end
   end
+
+  desc 'Sync database and bank list'
+  task :sync do
+    require 'bsb/database_generator'
+    require 'bsb/bank_list_generator'
+    bank_list_filename = BSB::BankListGenerator.latest_file(
+      matching_filename: 'KEY TO ABBREVIATIONS AND BSB NUMBERS (',
+      file_format: '.csv'
+    )
+    db_list_filename = BSB::DatabaseGenerator.latest_file(
+      matching_filename: 'BSBDirectory',
+      file_format: '.txt'
+    )
+
+    system "rake bsb:generate_bank_list filename='#{bank_list_filename}' > config/bsb_bank_list.json"
+    system "rake bsb:generate_database filename='#{db_list_filename}' > config/bsb_db.json"
+  end
 end

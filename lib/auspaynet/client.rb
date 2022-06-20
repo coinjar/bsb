@@ -15,5 +15,13 @@ module Auspaynet
     ensure
       @ftp.chdir('/')
     end
+
+    def list(dir:, matching_filename:, file_format: 'csv')
+      @ftp.chdir(dir)
+      files = @ftp.nlst.select! { |f| f.include?(matching_filename) && f.include?(file_format) }
+      files.sort_by! { |filename| @ftp.mtime(filename) }
+    ensure
+      @ftp.chdir('/')
+    end
   end
 end
