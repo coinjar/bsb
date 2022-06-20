@@ -7,7 +7,7 @@ namespace :bsb do
       bsb_db_gen = BSB::DatabaseGenerator.load_file(filename)
       puts bsb_db_gen.json
     else
-      STDERR.puts "Filename variable must be passed. For example, `rake bsb:generate_database filename=BSBDirectoryOct14-222.txt > config/bsb_db.json`"
+      STDERR.puts "Filename variable must be passed. For example, `rake bsb:generate_database filename=BSBDirectoryMay22-314.txt > config/bsb_db.json`"
     end
   end
 
@@ -19,7 +19,7 @@ namespace :bsb do
       bsb_bl_gen = BSB::BankListGenerator.load_file(filename)
       puts bsb_bl_gen.json
     else
-      STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list filename='KEY TO ABBREVIATIONS AND BSB NUMBERS (Apr 2020).csv' > config/bsb_bank_list.json`"
+      STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list filename='KEY TO ABBREVIATIONS AND BSB NUMBERS (May 2022).csv' > config/bsb_bank_list.json`"
     end
   end
 end
