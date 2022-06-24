@@ -29,7 +29,7 @@ namespace :bsb do
   task :sync do
     require 'bsb/base_generator'
     bank_list_filename = BSB::BaseGenerator.latest_file(
-      matching_filename: 'KEY TO ABBREVIATIONS AND BSB NUMBERS (',
+      matching_filename: 'KEY TO ABBREVIATIONS AND BSB NUMBERS',
       file_format: '.csv'
     )
     db_list_filename = BSB::BaseGenerator.latest_file(
