@@ -1,0 +1,29 @@
+# name: Sync Bank List and Database
+
+# on:
+#   schedule:
+#     - cron: "* * * * *"
+
+# jobs:
+#   build:
+#     name: Build + Sync
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       packages: write
+
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Ruby 2.6
+#       uses: actions/setup-ruby@v1
+#       with:
+#         ruby-version: 2.6.x
+
+#     - name: Run rake
+#       run: bundle exec rake bsb:sync
+#     - uses: stefanzweifel/git-auto-commit-action@v4
+#       with:
+#         commit_message: "[Bot] Sync update on ${date}"
+#         commit_user_name: coinjar
+#         commit_user_email: info@coinjar.com
+#         commit_author: Github Bot
