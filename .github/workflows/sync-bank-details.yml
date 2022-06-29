@@ -2,7 +2,7 @@ name: Sync Bank List and Database
 
 on:
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: "* * * * *"
 
 jobs:
   build:
