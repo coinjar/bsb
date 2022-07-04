@@ -1,8 +1,8 @@
 name: Sync Bank List and Database
 
 on:
-  push:
-    branches: [ master ]
+  schedule:
+    - cron: "* * * * *"
 
 jobs:
   build:
@@ -18,8 +18,9 @@ jobs:
         run: |
           bundle install
           bundle exec rake bsb:sync
-          git config user.name achhetr
-          git config user.email akash.chhetri@gmail.com
+          git config user.name ${GITHUB_USER_NAME}
+          git config user.email ${GITHUB_EMAIL}
           git add .
-          git commit -m "fix: Sync update on ${date}"
+          git commit -m "fix: Sync update on $(date)"
           git push
+
