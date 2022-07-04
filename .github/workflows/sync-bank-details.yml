@@ -18,9 +18,9 @@ jobs:
         run: |
           bundle install
           bundle exec rake bsb:sync
-          git config user.name ${GITHUB_USER_NAME}
-          git config user.email ${GITHUB_EMAIL}
-          git add .
-          git commit -m "fix: Sync update on $(date)"
+          git config --global user.name ${GITHUB_USER_NAME}
+          git config --global user.email ${GITHUB_EMAIL}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "fix: Sync update on $(date)"
           git push
 
