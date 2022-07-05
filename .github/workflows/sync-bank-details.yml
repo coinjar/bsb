@@ -2,15 +2,15 @@ name: Sync Bank List and Database
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "0 0 1 * *"
 
 jobs:
   build:
-    name: Build + Sync
+    name: Sync Bank List
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Ruby 2.6
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
@@ -18,9 +18,30 @@ jobs:
         run: |
           bundle install
           bundle exec rake bsb:sync
-          git config --global user.name ${GITHUB_USER_NAME}
-          git config --global user.email ${GITHUB_EMAIL}
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "fix: Sync update on $(date)"
-          git push
-
+      - name: Extract git commit data
+        uses: rlespinasse/git-commit-data-action@v1
+      - name: Update Author info
+        run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHOR
+      - name: Raise PR
+        id: demo-1
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "update/auto-bank-list"
+          base: master
+          title: Github Action updated $(date)
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          token: ${{ secrets.AUTO_SYNC_BANK_BOT }}
+          delete-branch: true
+      - name: Approve Pull Request
+        uses: juliangruber/approve-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{steps.demo-1.outputs.pull-request-number }}
+      - name: Merge Pull Request
+        uses: juliangruber/merge-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{steps.demo-1.outputs.pull-request-number }}
+          method: squash

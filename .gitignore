@@ -14,3 +14,4 @@ vendor/
 mkmf.log
 *.gem
 .env
+AUTHOR
