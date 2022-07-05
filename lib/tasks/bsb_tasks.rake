@@ -48,7 +48,7 @@ namespace :bsb do
     versions = current_version.split('.')
     patch_version = versions.pop.to_i
     versions.push(patch_version + 1)
-    current_version = versions.join(".")
+    current_version = versions.join('.')
     File.write(version_file_path, current_version)
   end
 end
