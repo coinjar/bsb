@@ -40,4 +40,15 @@ namespace :bsb do
     system "rake bsb:generate_bank_list filename='#{bank_list_filename}' > config/bsb_bank_list.json"
     system "rake bsb:generate_database filename='#{db_list_filename}' > config/bsb_db.json"
   end
+
+  desc 'version update'
+  task :version_update do
+    version_file_path = File.join(File.dirname(File.dirname(__FILE__)), 'bsb', '.current-version')
+    current_version = File.read(version_file_path).strip
+    versions = current_version.split('.')
+    patch_version = versions.pop.to_i
+    versions.push(patch_version + 1)
+    current_version = versions.join(".")
+    File.write(version_file_path, current_version)
+  end
 end
