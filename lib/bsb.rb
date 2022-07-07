@@ -12,7 +12,7 @@ module BSB
       return nil if array.nil?
 
       {
-        bsb:,
+        bsb: bsb,
         mnemonic: array[0],
         bank_name: bank_name(bsb),
         branch: array[1],

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'bsb'
 require 'active_model'
 
 class BsbNumberValidator < ActiveModel::EachValidator
