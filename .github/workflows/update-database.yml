@@ -1,0 +1,33 @@
+name: Update BSB Database
+
+on:
+  schedule:
+    # https://crontab.guru/every-month
+    # At 00:00 on day-of-month 1.
+    - cron: "0 0 1 * *" 
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Update BSB Database & Version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Update BSB Database & Version
+        run: bundle exec rake bsb:sync
+      - id: get-date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - uses: peter-evans/create-pull-request@v4
+        id: raise-pr
+        with:
+          branch: "bot/${{ steps.get-date.outputs.date }}"
+          base: master
+          title: "feat: ${{ steps.get-date.outputs.date }} periodic update of config/*.json database files."
+          committer: GitHub Actions <actions@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          delete-branch: true
