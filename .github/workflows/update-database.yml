@@ -1,16 +1,13 @@
-name: Sync Bank List and Database
-
-
+name: Update BSB Database
 
 on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
-    inputs:
 
 jobs:
   build:
-    name: Sync Bank List
+    name: Update BSB Database & Version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,7 +15,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: update database
+      - name: Update BSB Database & Version
         run: |
           bundle install
           bundle exec rake bsb:sync
@@ -28,4 +25,4 @@ jobs:
           message: periodic update of config/*.json database files.
           committer_name: GitHub Actions
           committer_email: actions@github.com
-          add: 'config/*.json'
+          add: 'config/*.json lib/config/.current_version'
