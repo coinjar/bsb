@@ -1,8 +1,12 @@
 name: Sync Bank List and Database
 
+
+
 on:
   schedule:
     - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
 
 jobs:
   build:
