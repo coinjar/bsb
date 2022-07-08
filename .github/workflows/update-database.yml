@@ -6,7 +6,6 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
-    inputs:
 
 jobs:
   build:
@@ -28,4 +27,4 @@ jobs:
           message: periodic update of config/*.json database files.
           committer_name: GitHub Actions
           committer_email: actions@github.com
-          add: 'config/*.json'
+          add: 'config/*.json lib/config/.current_version'
