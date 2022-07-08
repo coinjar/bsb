@@ -1,0 +1,27 @@
+name: Sync Bank List and Database
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  build:
+    name: Sync Bank List
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: update database
+        run: |
+          bundle install
+          bundle exec rake bsb:sync
+          bundle exec rake bsb:version_update
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: periodic update of config/*.json database files.
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+          add: 'config/*.json'

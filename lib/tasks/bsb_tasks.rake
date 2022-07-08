@@ -1,25 +1,35 @@
+# frozen_string_literal: true
+
 namespace :bsb do
-  desc "Generate JSON-formatted database from APCA BSB directory"
-  task :generate_database do
+  desc 'Sync config/*.json.'
+  task :sync do
+    require 'bsb/base_generator'
+    bank_list_filename = BSB::BaseGenerator.latest_file(
+      matching_filename: 'KEY TO ABBREVIATIONS AND BSB NUMBERS',
+      file_format: '.csv'
+    )
+    db_list_filename = BSB::BaseGenerator.latest_file(
+      matching_filename: 'BSBDirectory',
+      file_format: '.txt'
+    )
+
+    require 'bsb/bank_list_generator'
+    bsb_bl_gen = BSB::BankListGenerator.load_file(bank_list_filename)
+    File.write('config/bsb_bank_list.json', bsb_bl_gen.json)
+
     require 'bsb/database_generator'
-    if filename = ENV['filename']
-      STDERR.puts "Loading BSB file from APCA FTP server... (This may take a while)"
-      bsb_db_gen = BSB::DatabaseGenerator.load_file(filename)
-      puts bsb_db_gen.json
-    else
-      STDERR.puts "Filename variable must be passed. For example, `rake bsb:generate_database filename=BSBDirectoryOct14-222.txt > config/bsb_db.json`"
-    end
+    bsb_db_gen = BSB::DatabaseGenerator.load_file(db_list_filename)
+    File.write('config/bsb_db.json', bsb_db_gen.json)
   end
 
-  desc "Generate JSON-formatted bank list from APCA BSB directory"
-  task :generate_bank_list do
-    require 'bsb/bank_list_generator'
-    if filename = ENV['filename']
-      STDERR.puts "Loading Bank List file... (This may take a while)"
-      bsb_bl_gen = BSB::BankListGenerator.load_file(filename)
-      puts bsb_bl_gen.json
-    else
-      STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list filename='KEY TO ABBREVIATIONS AND BSB NUMBERS (Apr 2020).csv' > config/bsb_bank_list.json`"
-    end
+  desc 'Version update.'
+  task :version_update do
+    version_file_path = File.join(File.dirname(File.dirname(__FILE__)), 'bsb', '.current-version')
+    current_version = File.read(version_file_path).strip
+    versions = current_version.split('.')
+    patch_version = versions.pop.to_i
+    versions.push(patch_version + 1)
+    current_version = versions.join('.')
+    File.write(version_file_path, current_version)
   end
 end
