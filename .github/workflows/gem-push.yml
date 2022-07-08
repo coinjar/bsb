@@ -3,6 +3,7 @@ name: Ruby Gem
 on:
   push:
     branches: [ master ]
+    path: 'lib/config/.current_version'
 
 jobs:
   build:
