@@ -1,6 +1,4 @@
-name: Sync Bank List and Database
-
-
+name: Update BSB Database
 
 on:
   schedule:
@@ -9,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Sync Bank List
+    name: Update BSB Database & Version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +15,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: update database
+      - name: Update BSB Database & Version
         run: |
           bundle install
           bundle exec rake bsb:sync
