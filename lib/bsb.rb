@@ -35,18 +35,18 @@ module BSB
       nil
     end
 
+    protected
+
     def normalize(str)
       str.gsub(/[^\d]/, '')
     end
 
-    private
-
     def data_hash
-      @data_hash ||= JSON.parse(IO.read(File.expand_path('../config/bsb_db.json', __dir__)))
+      @data_hash ||= JSON.parse(File.read(File.expand_path('../config/bsb_db.json', __dir__)))
     end
 
     def bank_list
-      @bank_list ||= JSON.parse(IO.read(File.expand_path('../config/bsb_bank_list.json', __dir__)))
+      @bank_list ||= JSON.parse(File.read(File.expand_path('../config/bsb_bank_list.json', __dir__)))
     end
   end
 end

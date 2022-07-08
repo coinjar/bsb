@@ -27,7 +27,7 @@ module Auspaynet
           f.include?(file_format) &&
           f.include?(current_year)
       end
-      extract_latest_files(files: files, matching_filename: matching_filename, file_format: file_format)
+      extract_latest_files(files: files, file_format: file_format)
     ensure
       @ftp.chdir('/')
     end
@@ -38,12 +38,14 @@ module Auspaynet
       Time.now.strftime('%y')
     end
 
-    def extract_latest_files(files:, matching_filename:, file_format:)
-      files.sort_by { |filename| file_for_month(filename: filename, matching_filename: matching_filename, file_format: file_format) }
+    def extract_latest_files(files:, file_format:)
+      files.sort_by do |filename|
+        file_for_month(filename: filename, file_format: file_format)
+      end
     end
 
-    def file_for_month(filename:, matching_filename:, file_format:)
-      month_from_filename = filename.gsub(/(#{filename}|\#{file_format}|\W|\d)/, '')
+    def file_for_month(filename:, file_format:)
+      month_from_filename = filename.gsub(/(#{filename}|#{file_format}|\W|\d)/, '')
       month_number(month_from_filename)
     end
 
