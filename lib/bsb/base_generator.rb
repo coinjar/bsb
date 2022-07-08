@@ -15,7 +15,7 @@ module BSB
 
     def self.latest_file(matching_filename:, file_format:)
       client = ::Auspaynet::Client.new('bsb.hostedftp.com')
-      client.list(dir: '~auspaynetftp/BSB', matching_filename:, file_format:)&.last
+      client.list(dir: '~auspaynetftp/BSB', matching_filename: matching_filename, file_format: file_format)&.last
     end
   end
 end
