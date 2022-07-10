@@ -22,9 +22,23 @@ jobs:
           bundle install
           bundle exec rake bsb:sync
           bundle exec rake && bundle exec rake bsb:version_update
-      - uses: EndBug/add-and-commit@v9
+      - id: get-date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - uses: peter-evans/create-pull-request@v4
+        id: raise-pr
         with:
-          message: periodic update of config/*.json database files.
-          committer_name: GitHub Actions
-          committer_email: actions@github.com
-          add: 'config/*.json lib/bsb/.current-version'
+          branch: "bot/${{ steps.get-date.outputs.date }}"
+          base: master
+          title: "${{ steps.date.outputs.date }} - periodic update of config/*.json database files."
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          delete-branch: true
+      - uses: juliangruber/approve-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{steps.raise-pr.outputs.pull-request-number }}
+      - uses: juliangruber/merge-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{steps.raise-pr.outputs.pull-request-number }}
+          method: squash
