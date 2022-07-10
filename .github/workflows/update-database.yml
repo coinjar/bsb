@@ -27,4 +27,4 @@ jobs:
           message: periodic update of config/*.json database files.
           committer_name: GitHub Actions
           committer_email: actions@github.com
-          add: 'config/*.json lib/bsb/.current_version'
+          add: 'config/*.json lib/bsb/.current-version'
