@@ -2,9 +2,9 @@ name: Update BSB Database
 
 on:
   schedule:
-    # https://crontab.guru/#59_11_*_*/1_*
-    # At 11:59 in every month.
-    - cron: "59 11 * */1 *" 
+    # https://crontab.guru/every-month
+    # At 00:00 on day-of-month 1.
+    - cron: "0 0 1 * *" 
   workflow_dispatch:
 
 jobs:
