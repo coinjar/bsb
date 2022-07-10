@@ -21,7 +21,7 @@ jobs:
         run: |
           bundle install
           bundle exec rake bsb:sync
-          bundle exec rake bsb:version_update
+          bundle exec rake && bundle exec rake bsb:version_update
       - uses: EndBug/add-and-commit@v9
         with:
           message: periodic update of config/*.json database files.
