@@ -34,10 +34,9 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           delete-branch: true
-          token: ${{ secrets.BSB_BOT_TOKEN }}
       - uses: juliangruber/approve-pull-request-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.BSB_BOT_TOKEN }}
           number: ${{steps.raise-pr.outputs.pull-request-number }}
       - uses: juliangruber/merge-pull-request-action@v1
         with:
