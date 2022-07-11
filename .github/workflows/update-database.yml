@@ -29,10 +29,12 @@ jobs:
         with:
           branch: "bot/${{ steps.get-date.outputs.date }}"
           base: master
-          title: "${{ steps.date.outputs.date }} - periodic update of config/*.json database files."
+          title: "${{ steps.get-date.outputs.date }} - periodic update of config/*.json database files."
+          committer: GitHub Actions <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           delete-branch: true
+          # token: ${{ secrets.BSB_BOT_TOKEN }}
       - uses: juliangruber/approve-pull-request-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
