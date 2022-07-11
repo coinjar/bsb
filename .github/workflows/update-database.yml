@@ -22,7 +22,8 @@ jobs:
           bundle install
           bundle exec rake bsb:sync
           git diff --name-only | grep 'config/bsb'
-          bundle exec rake && bundle exec rake bsb:version_update
+          bundle exec rake
+          bundle exec rake bsb:version_update
       - id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - uses: peter-evans/create-pull-request@v4
