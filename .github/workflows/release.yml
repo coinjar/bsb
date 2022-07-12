@@ -1,0 +1,13 @@
+name: Release Please
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release-please:
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          command: manifest
