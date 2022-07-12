@@ -21,10 +21,15 @@ jobs:
         run: |
           bundle install
           bundle exec rake bsb:sync
-          bundle exec rake && bundle exec rake bsb:version_update
-      - uses: EndBug/add-and-commit@v9
+      - id: get-date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - uses: peter-evans/create-pull-request@v4
+        id: raise-pr
         with:
-          message: periodic update of config/*.json database files.
-          committer_name: GitHub Actions
-          committer_email: actions@github.com
-          add: 'config/*.json lib/bsb/.current-version'
+          branch: "bot/${{ steps.get-date.outputs.date }}"
+          base: master
+          title: "feat: ${{ steps.get-date.outputs.date }} periodic update of config/*.json database files."
+          committer: GitHub Actions <actions@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          delete-branch: true

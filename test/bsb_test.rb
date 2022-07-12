@@ -17,4 +17,12 @@ describe BSB do
   it '.bank_name' do
     assert_equal 'Reserve Bank of Australia', BSB.bank_name('092009')
   end
+
+  it '.normalize special char' do
+    assert_equal '083004', BSB.normalize('083-004')
+  end
+
+  it '.normalize whitespace' do
+    assert_equal '062000', BSB.normalize('06 2000')
+  end
 end
