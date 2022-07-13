@@ -20,7 +20,7 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created }}
     name: Build + Publish
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/master' }}
+    # if: ${{ github.ref == 'refs/heads/master' }}
     permissions:
       contents: read
       packages: write
