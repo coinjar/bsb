@@ -18,9 +18,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Update BSB Database & Version
-        run: |
-          bundle install
-          bundle exec rake bsb:sync
+        run: bundle exec rake bsb:sync
       - id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - uses: peter-evans/create-pull-request@v4
