@@ -2,13 +2,13 @@ name: Ruby Gem
 
 on:
   push:
-    branches: [ master ]
     path: 'lib/bsb/version.rb'
 
 jobs:
   build:
     name: Build + Publish
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/master' }}
     permissions:
       contents: read
       packages: write
