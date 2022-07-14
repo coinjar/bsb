@@ -26,7 +26,7 @@ jobs:
         with:
           branch: "bot/${{ steps.get-date.outputs.date }}"
           base: master
-          title: "feat: ${{ steps.get-date.outputs.date }} periodic update of config/*.json database files."
+          title: "fix: ${{ steps.get-date.outputs.date }} periodic update of config/*.json database files."
           committer: GitHub Actions <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
