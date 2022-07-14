@@ -27,6 +27,7 @@ module Auspaynet
           f.include?(file_format) &&
           f.include?(current_year)
       end
+
       extract_latest_files(files: files, file_format: file_format)
     ensure
       @ftp.chdir('/')

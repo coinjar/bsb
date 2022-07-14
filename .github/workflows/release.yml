@@ -1,11 +1,28 @@
-name: Ruby Gem
+name: Release Please
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          # https://github.com/google-github-actions/release-please-action
+          default-branch: master
+          release-type: ruby
+          package-name: bsb
+          version-file: lib/bsb/version.rb
+          fork: false
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+
   build:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
     name: Build + Publish
     runs-on: ubuntu-latest
     permissions:

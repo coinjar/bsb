@@ -35,11 +35,11 @@ module BSB
       nil
     end
 
-    protected
-
     def normalize(str)
       str.gsub(/[^\d]/, '')
     end
+
+    protected
 
     def data_hash
       @data_hash ||= JSON.parse(File.read(File.expand_path('../config/bsb_db.json', __dir__)))

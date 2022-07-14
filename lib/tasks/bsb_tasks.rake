@@ -21,15 +21,4 @@ namespace :bsb do
     bsb_db_gen = BSB::DatabaseGenerator.load_file(db_list_filename)
     File.write('config/bsb_db.json', bsb_db_gen.json)
   end
-
-  desc 'Version update.'
-  task :version_update do
-    version_file_path = File.join(File.dirname(File.dirname(__FILE__)), 'bsb', '.current-version')
-    current_version = File.read(version_file_path).strip
-    versions = current_version.split('.')
-    patch_version = versions.pop.to_i
-    versions.push(patch_version + 1)
-    current_version = versions.join('.')
-    File.write(version_file_path, current_version)
-  end
 end

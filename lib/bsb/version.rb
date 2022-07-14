@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module BSB
-  VERSION = File.read(File.join(File.dirname(__FILE__), '.current-version')).strip
+  VERSION = '0.1.0'.freeze
 end
