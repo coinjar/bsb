@@ -1,25 +1,24 @@
-namespace :bsb do
-  desc "Generate JSON-formatted database from APCA BSB directory"
-  task :generate_database do
-    require 'bsb/database_generator'
-    if filename = ENV['filename']
-      STDERR.puts "Loading BSB file from APCA FTP server... (This may take a while)"
-      bsb_db_gen = BSB::DatabaseGenerator.load_file(filename)
-      puts bsb_db_gen.json
-    else
-      STDERR.puts "Filename variable must be passed. For example, `rake bsb:generate_database filename=BSBDirectoryOct14-222.txt > config/bsb_db.json`"
-    end
-  end
+# frozen_string_literal: true
 
-  desc "Generate JSON-formatted bank list from APCA BSB directory"
-  task :generate_bank_list do
+namespace :bsb do
+  desc 'Sync config/*.json.'
+  task :sync do
+    require 'bsb/base_generator'
+    bank_list_filename = BSB::BaseGenerator.latest_file(
+      matching_filename: 'KEY TO ABBREVIATIONS AND BSB NUMBERS',
+      file_format: '.csv'
+    )
+    db_list_filename = BSB::BaseGenerator.latest_file(
+      matching_filename: 'BSBDirectory',
+      file_format: '.txt'
+    )
+
     require 'bsb/bank_list_generator'
-    if filename = ENV['filename']
-      STDERR.puts "Loading Bank List file... (This may take a while)"
-      bsb_bl_gen = BSB::BankListGenerator.load_file(filename)
-      puts bsb_bl_gen.json
-    else
-      STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list filename='KEY TO ABBREVIATIONS AND BSB NUMBERS (Apr 2020).csv' > config/bsb_bank_list.json`"
-    end
+    bsb_bl_gen = BSB::BankListGenerator.load_file(bank_list_filename)
+    File.write('config/bsb_bank_list.json', bsb_bl_gen.json)
+
+    require 'bsb/database_generator'
+    bsb_db_gen = BSB::DatabaseGenerator.load_file(db_list_filename)
+    File.write('config/bsb_db.json', bsb_db_gen.json)
   end
 end

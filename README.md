@@ -68,6 +68,10 @@ Two data sources are used:
 
 Other formats of APCA BSB data is available from http://bsb.apca.com.au.
 
+## Update source
+
+Run this `rake bsb:sync` command to complete sync of the latest data
+
 ## Contributing
 
 1. Fork it ( https://github.com/zhoutong/bsb/fork )
