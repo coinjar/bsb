@@ -12,6 +12,18 @@
 
 * release 1.0.0 ([#19](https://github.com/coinjar/bsb/issues/19)) ([b7e8a42](https://github.com/coinjar/bsb/commit/b7e8a4235fbd120af9d24f760518fcb865f5e683))
 
+## [1.0.0](https://github.com/coinjar/bsb/compare/v1.0.0...v1.0.0) (2022-09-25)
+
+
+### Bug Fixes
+
+* multi ruby bundle by removing .lock with gemspec resolution. ([#17](https://github.com/coinjar/bsb/issues/17)) ([21a089b](https://github.com/coinjar/bsb/commit/21a089b3c9ef4ff7433f6f7961765731c290e477))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([#19](https://github.com/coinjar/bsb/issues/19)) ([b7e8a42](https://github.com/coinjar/bsb/commit/b7e8a4235fbd120af9d24f760518fcb865f5e683))
+
 ## 1.0.0 (2022-09-21)
 
 
