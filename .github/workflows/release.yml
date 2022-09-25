@@ -7,6 +7,9 @@ on:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -20,22 +23,17 @@ jobs:
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
 
-  build:
-    needs: release-please
-    if: ${{ needs.release-please.outputs.release_created }}
-    name: Build + Publish
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    - if: ${{ steps.release.outputs.release_created }}
+      uses: actions/checkout@v3
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
+    - if: ${{ steps.release.outputs.release_created }}
+      name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-    - name: Publish to GPR
+
+    - if: ${{ steps.release.outputs.release_created }}
+      name: Publish to GPR
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
@@ -47,7 +45,8 @@ jobs:
         GEM_HOST_API_KEY: "Bearer ${{secrets.GITHUB_TOKEN}}"
         OWNER: ${{ github.repository_owner }}
 
-    - name: Publish to RubyGems
+    - if: ${{ steps.release.outputs.release_created }}
+      name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
