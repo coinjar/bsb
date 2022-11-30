@@ -23,7 +23,7 @@ namespace :bsb do
   end
 
   task :update_bank_branch_data do
-    # system "echo sometext >> config/bsb_bank_list.json"
-    # system "echo sometext >> config/bsb_db.json"
+    system "echo sometext >> config/bsb_bank_list.json"
+    system "echo sometext >> config/bsb_db.json"
   end
 end
