@@ -21,4 +21,9 @@ namespace :bsb do
       STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list url='http://bsb.apca.com.au/public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(july2014).csv' > config/bsb_bank_list.json`"
     end
   end
+
+  task :update_bank_branch_data do
+    # system "echo sometext >> config/bsb_bank_list.json"
+    # system "echo sometext >> config/bsb_db.json"
+  end
 end
