@@ -1,8 +1,11 @@
 ---
 name: Update bank/branch data
 on:
-  schedule:
-    - cron: "0 0 * * *" # midnightly UTC
+  # schedule:
+  #   - cron: "0 0 * * *" # midnightly UTC
+  push:
+    branches:
+      - 'update_bank_branch_gha'
 jobs:
   update_bank_branch_data:
     runs-on: ubuntu-latest
