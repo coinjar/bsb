@@ -23,7 +23,23 @@ namespace :bsb do
   end
 
   task :update_bank_branch_data do
-    system "echo sometext >> config/bsb_bank_list.json"
-    system "echo sometext >> config/bsb_db.json"
+    require 'bsb/database_generator'
+    require 'bsb/bank_list_generator'
+    require "active_support/core_ext/integer/time"
+
+    filename_month = (Time.now - 1.month).strftime('%B')
+    filename_year = (Time.now - 1.month).strftime('%Y')
+    
+    # Update bsb_db.json file
+    filename = "BSBDirectory#{filename_month.slice(0,3)}#{filename_year.slice(2,2)}-*.txt"
+    STDERR.puts "Loading BSB file from APCA FTP server... (This may take a while)"
+    bsb_db_gen = BSB::DatabaseGenerator.load_file(filename)
+    File.write("config/bsb_db.json", bsb_db_gen.json)
+
+    # Update bsb_bank_list.json file
+    url = "http://bsb.hostedftp.com/~auspaynetftp/BSB/KEY%20TO%20ABBREVIATIONS%20AND%20BSB%20NUMBERS%20(#{filename_month}%20#{filename_year}).csv"
+    STDERR.puts "Loading Bank List file... (This may take a while)"
+    bsb_bl_gen = BSB::BankListGenerator.load_file(url)
+    File.write("config/bsb_bank_list.json", bsb_bl_gen.json)
   end
 end
