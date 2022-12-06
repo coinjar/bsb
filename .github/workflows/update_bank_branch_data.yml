@@ -27,9 +27,6 @@ jobs:
           files: |
             config/bsb_bank_list.json
             config/bsb_db.json
-      - name: Bump gem version
-        if: steps.verify_changed_files.outputs.files_changed == 'true'
-        run: bin/bump_gem_version
       - name: Create pull request
         if: steps.verify_changed_files.outputs.files_changed == 'true'
         uses: peter-evans/create-pull-request@v4
