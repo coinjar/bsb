@@ -35,7 +35,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           title: "Update bank/branch data"
-          team-reviewers: "zeptofs/team-send"
+          reviewers: aathithya-zepto
+          team-reviewers: zeptofs/team-send
           branch: "update-bank-branch-data"
           commit-message: "Update bank/branch data"
           delete-branch: true
