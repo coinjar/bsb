@@ -21,4 +21,24 @@ namespace :bsb do
       STDERR.puts "URL variable must be passed. For example, `rake bsb:generate_bank_list url='http://bsb.apca.com.au/public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(july2014).csv' > config/bsb_bank_list.json`"
     end
   end
+
+  task :update_bank_branch_data do
+    require "bsb/database_generator"
+    require "bsb/bank_list_generator"
+
+    filename_month = DateTime.now.prev_month.strftime('%B')
+    filename_year = DateTime.now.prev_month.strftime('%Y')
+    
+    # Update bsb_db.json file
+    filename = "BSBDirectory#{filename_month.slice(0,3)}#{filename_year.slice(2,2)}-*.txt"
+    STDERR.puts "Loading BSB file from APCA FTP server... (This may take a while)"
+    bsb_db_gen = BSB::DatabaseGenerator.load_file(filename)
+    File.write("config/bsb_db.json", bsb_db_gen.json)
+
+    # Update bsb_bank_list.json file
+    url = URI::Parser.new.escape("http://bsb.hostedftp.com/~auspaynetftp/BSB/KEY TO ABBREVIATIONS AND BSB NUMBERS (#{filename_month} #{filename_year}).csv")
+    STDERR.puts "Loading Bank List file... (This may take a while)"
+    bsb_bl_gen = BSB::BankListGenerator.load_file(url)
+    File.write("config/bsb_bank_list.json", bsb_bl_gen.json)
+  end
 end

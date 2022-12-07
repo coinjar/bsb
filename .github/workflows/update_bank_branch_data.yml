@@ -1,0 +1,34 @@
+---
+name: Update bank/branch data
+on:
+  schedule:
+    - cron: "0 1 * * *" # 1am UTC
+jobs:
+  update_bank_branch_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Update bank/branch data
+        run: |
+          bundle install
+          bundle exec rake bsb:update_bank_branch_data
+      - name: Verify changed files
+        uses: tj-actions/verify-changed-files@v12
+        id: verify_changed_files
+        with:
+          files: |
+            config/bsb_bank_list.json
+            config/bsb_db.json
+      - name: Create pull request
+        if: steps.verify_changed_files.outputs.files_changed == 'true'
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: "Update bank/branch data"
+          branch: "update-bank-branch-data"
+          commit-message: "Update bank/branch data"
+          delete-branch: true
