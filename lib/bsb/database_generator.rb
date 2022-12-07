@@ -17,7 +17,7 @@ module BSB
       ftp.passive = true
       ftp.chdir('~auspaynetftp/BSB')
 
-      filelist = ftp.list(filename, nil)
+      filelist = ftp.list(filename)
       filename = filelist.first.split.last if filelist.size == 1
 
       content = ftp.gettextfile(filename, nil)
