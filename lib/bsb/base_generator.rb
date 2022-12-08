@@ -10,7 +10,7 @@ module BSB
     end
 
     def json
-      JSON.dump(@hash)
+      JSON.pretty_generate(@hash)
     end
 
     def self.latest_file(matching_filename:, file_format:)
