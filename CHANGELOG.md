@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/coinjar/bsb/compare/v1.0.1...v1.1.0) (2022-12-08)
+
+
+### Features
+
+* Pretty generate JSON ([#27](https://github.com/coinjar/bsb/issues/27)) ([829311c](https://github.com/coinjar/bsb/commit/829311c3ea398cdf5dcbd47db8e38bad2b24dbab))
+
 ## [1.0.1](https://github.com/coinjar/bsb/compare/v1.0.0...v1.0.1) (2022-11-04)
 
 
