@@ -1,6 +1,6 @@
 # The BSB Gem
 
-**Note:** This gem is a fork of zhoutong/bsb which seems to no longer be maintained. Futhermore, this gem requires manual updates to keep the data fresh. It is our intention to eventually update this gem to remove manual processing.
+**Note:** This archived repository is a fork of coinjar/bsb which for a while did not appear to be maintained. Zepto's fork was created to introduce an automated update task to keep the data fresh. The upstream gem now is now actively maintained with a monthly automated task to update data and publish a new version to rubygems.org.
 
 A Bank State Branch (BSB) number is a code that identifies banks and branches in Australia. This gem provides an easy-to-use lookup utility and an ActiveModel validator for use in any Rails project.
 
