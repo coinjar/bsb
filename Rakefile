@@ -16,5 +16,5 @@ require 'rubocop/rake_task'
 RuboCop::RakeTask.new
 
 desc 'Run tests'
-task default: :'rubocop:auto_correct'
+task default: :'rubocop:autocorrect_all'
 task default: :test
