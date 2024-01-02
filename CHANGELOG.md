@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.5](https://github.com/coinjar/bsb/compare/v1.1.4...v1.1.5) (2024-01-02)
+
+
+### Bug Fixes
+
+* 2024-01-02 periodic update of config/*.json database files. ([#41](https://github.com/coinjar/bsb/issues/41)) ([5cd847f](https://github.com/coinjar/bsb/commit/5cd847f03812bbf4293b482c466b2c40e72188da))
+* skip missing files instead of failing ([#39](https://github.com/coinjar/bsb/issues/39)) ([95f340f](https://github.com/coinjar/bsb/commit/95f340f1396c62a304ce6bde4edad28263ee45e9))
+
 ## [1.1.4](https://github.com/coinjar/bsb/compare/v1.1.3...v1.1.4) (2023-11-09)
 
 
