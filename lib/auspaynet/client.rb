@@ -25,7 +25,7 @@ module Auspaynet
       files = @ftp.nlst.select do |f|
         f.include?(matching_filename) &&
           f.include?(file_format) &&
-          f.include?(current_year)
+          (f.include?("#{current_year}-") || f.include?("#{current_year})"))
       end
 
       extract_latest_files(files: files, file_format: file_format)
