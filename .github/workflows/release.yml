@@ -22,7 +22,7 @@ jobs:
           bump-patch-for-minor-pre-major: true
 
       - if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - if: ${{ steps.release.outputs.release_created }}
         name: Set up Ruby

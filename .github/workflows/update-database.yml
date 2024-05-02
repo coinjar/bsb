@@ -12,7 +12,7 @@ jobs:
     name: Update BSB Database & Version
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -21,13 +21,10 @@ jobs:
         run: bundle exec rake bsb:sync
       - id: get-date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-      - uses: peter-evans/create-pull-request@v4
+      - uses: peter-evans/create-pull-request@v6
         id: raise-pr
         with:
           branch: "bot/${{ steps.get-date.outputs.date }}"
           base: master
           title: "fix: ${{ steps.get-date.outputs.date }} periodic update of config/*.json database files."
-          committer: GitHub Actions <actions@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          signoff: false
           delete-branch: true
