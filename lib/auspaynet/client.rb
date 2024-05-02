@@ -21,26 +21,12 @@ module Auspaynet
     def list(dir:, matching_filename:, file_format: 'csv')
       @ftp.chdir(dir)
       files = @ftp.nlst.select do |f|
-        f.include?(matching_filename) &&
-          f.include?(file_format) &&
-          (f.include?("#{current_year}-") || f.include?("#{current_year})"))
+        f.include?(matching_filename) && f.end_with?(file_format)
       end
 
-      extract_latest_files(files: files, file_format: file_format)
+      files.sort_by { |fname| @ftp.mtime(fname) }
     ensure
       @ftp.chdir('/')
-    end
-
-    private
-
-    def current_year
-      Time.now.strftime('%y')
-    end
-
-    def extract_latest_files(files:, _file_format:)
-      files.sort_by do |filename|
-        @ftp.mtime(filename)
-      end
     end
   end
 end
