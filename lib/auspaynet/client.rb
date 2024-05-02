@@ -37,7 +37,7 @@ module Auspaynet
       Time.now.strftime('%y')
     end
 
-    def extract_latest_files(files:, file_format:)
+    def extract_latest_files(files:, _file_format:)
       files.sort_by do |filename|
         @ftp.mtime(filename)
       end
