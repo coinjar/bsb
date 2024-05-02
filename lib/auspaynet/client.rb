@@ -4,8 +4,6 @@ require 'net/ftp'
 
 module Auspaynet
   class Client
-    MONTHS = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
-
     def initialize(host)
       @host = host
       @ftp = Net::FTP.new(@host)
@@ -41,17 +39,8 @@ module Auspaynet
 
     def extract_latest_files(files:, file_format:)
       files.sort_by do |filename|
-        file_for_month(filename: filename, file_format: file_format)
+        @ftp.mtime(filename)
       end
-    end
-
-    def file_for_month(filename:, file_format:)
-      month_from_filename = filename.gsub(/(#{filename}|#{file_format}|\W|\d)/, '')
-      month_number(month_from_filename)
-    end
-
-    def month_number(month_from_filename)
-      MONTHS.find_index(month_from_filename)
     end
   end
 end
