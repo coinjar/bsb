@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/coinjar/bsb/compare/v1.1.10...v1.2.0) (2024-06-05)
+
+
+### Features
+
+* drop ruby 2.7 support; add ruby 3.3 support ([#55](https://github.com/coinjar/bsb/issues/55)) ([c6eced5](https://github.com/coinjar/bsb/commit/c6eced519d4b821bb58cb647249460e9ee80937a))
+
 ## [1.1.10](https://github.com/coinjar/bsb/compare/v1.1.9...v1.1.10) (2024-06-05)
 
 
