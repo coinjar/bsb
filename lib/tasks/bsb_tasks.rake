@@ -2,21 +2,10 @@
 
 namespace :bsb do
   desc 'Sync config/*.json.'
-  task :sync do
+  task :sync, [:keyfile, :bsbfile] do |_t, args|
     require 'bsb/base_generator'
-    bank_list_filename = BSB::BaseGenerator.latest_file(
-      matching_filename: 'KEY TO ABBREVIATIONS AND BSB NUMBERS',
-      file_format: '.csv'
-    )
-    db_list_filename = BSB::BaseGenerator.latest_file(
-      matching_filename: 'BSBDirectory',
-      file_format: '.txt'
-    )
-
-    raise 'No bank list or bsb found' unless bank_list_filename || db_list_filename
-
-    puts "Bank list file: '#{bank_list_filename}'"
-    puts "DB file: '#{db_list_filename}'"
+    bank_list_filename = args[:keyfile]
+    db_list_filename = args[:bsbfile]
 
     if bank_list_filename
       require 'bsb/bank_list_generator'
