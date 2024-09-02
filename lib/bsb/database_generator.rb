@@ -5,10 +5,8 @@ require 'bsb/base_generator'
 module BSB
   class DatabaseGenerator < BaseGenerator
     def self.load_file(filename)
-      client = ::Auspaynet::Client.new('bsb.hostedftp.com')
-      content = client.get('~auspaynetftp/BSB', filename)
       hash = {}
-      content.each_line do |line|
+      File.foreach(filename) do |line|
         next if line[3] != '-'
 
         bsb = line[0, 3] + line[4, 3]
