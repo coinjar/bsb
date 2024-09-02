@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/coinjar/bsb/compare/v1.2.1...v1.2.2) (2024-09-02)
+
+
+### Bug Fixes
+
+* Sep 2024 update, FTP updates retired. ([#59](https://github.com/coinjar/bsb/issues/59)) ([16082c8](https://github.com/coinjar/bsb/commit/16082c8a2c9d60f92e3566d29b4dc6c98745e21e))
+
 ## [1.2.1](https://github.com/coinjar/bsb/compare/v1.2.0...v1.2.1) (2024-07-08)
 
 
