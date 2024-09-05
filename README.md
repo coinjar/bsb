@@ -68,18 +68,32 @@ Two data sources are used:
 
 Other formats of APCA BSB data is available from http://bsb.apca.com.au.
 
-## Update source
+## Update BSB Bank List
 
 At the moment BSB data is a manual download from the Auspaynet site [here](https://bsb.auspaynet.com.au/).
 
 You will need to download two files, place them in `tmp/`:
 - `Reference Documents` button > `Key to Abbreviations and BSB Number` in CSV format.
+
+Run the sync task with the files to complete sync of the latest data:
+
+```sh
+rake bsb:sync_bank_list_['tmp/key to abbreviations and bsb numbers (august 2024).csv']
+```
+
+Browse the list of database changes, make a few queries on the website to ensure the results are the same.
+
+## Update BSB DB (Manual)
+
+BSB DB data can be downloaded manually from the Auspaynet site [here](https://bsb.auspaynet.com.au/).
+
+You will need to download two files, place them in `tmp/`:
 - `Download BSB Files` button > `BSB Directory (Full Version)` in TEXT format.
 
 Run the sync task with the files to complete sync of the latest data:
 
 ```sh
-rake bsb:sync['tmp/key to abbreviations and bsb numbers (august 2024).csv','tmp/BSBDirectoryAug24-341.txt']
+rake bsb:sync_bsb_db_manual['tmp/BSBDirectoryAug24-341.txt']
 ```
 
 Browse the list of database changes, make a few queries on the website to ensure the results are the same.
