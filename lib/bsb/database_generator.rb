@@ -32,7 +32,7 @@ module BSB
       response = conn.post('/bsbquery/manual/paths/invoke') do |req|
         # Just following AusPayNet's recommendation with the formatting of this param. It's a required field
         # as well.
-        req.body = { outputparam: ' ' * 30 }.to_json
+        req.body = { outputparam: ' ' * (LEADER_WIDTH - 11) }.to_json
       end
 
       hash = {}
