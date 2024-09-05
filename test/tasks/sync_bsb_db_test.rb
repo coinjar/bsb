@@ -10,8 +10,8 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
     BSB::CHANGES_FILEPATH = 'test/tmp/latest_update.json'
     BSB::DatabaseGenerator::LEADER_WIDTH = 0
     Rake.application.rake_require('../lib/tasks/sync_bsb_db')
-    Rake::Task["bsb:sync_bsb_db"].reenable
-    File.write(BSB::DB_FILEPATH, File.read("test/fixtures/bsb_db.json"))
+    Rake::Task['bsb:sync_bsb_db'].reenable
+    File.write(BSB::DB_FILEPATH, File.read('test/fixtures/bsb_db.json'))
   end
 
   after do
@@ -81,7 +81,7 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
   let(:expected_changes) do
     JSON.pretty_generate(
       {
-        "additions": {
+        additions: {
           '123456': [
             'TST',
             'Aviato',
@@ -90,9 +90,9 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
             'NSW',
             '1234',
             ' EH'
-          ],
+          ]
         },
-        "deletions": {
+        deletions: {
           '333333': [
             'AAA',
             'Aviato3',
@@ -103,7 +103,7 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
             'P H'
           ]
         },
-        "modifications": {
+        modifications: {
           '987654': [
             'EST',
             'Aviato2',

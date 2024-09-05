@@ -8,10 +8,10 @@ namespace :bsb do
   task :sync_bsb_db do
     latest_db = BSB::DatabaseGenerator.fetch_latest
     existing_db_hash = JSON.parse(File.read(BSB::DB_FILEPATH))
-    latest_db_hash = latest_db.hash 
-     
-    deletions = existing_db_hash.select { |bsb, _| !latest_db_hash.key?(bsb) }
-    additions = latest_db_hash.select { |bsb, _| !existing_db_hash.key?(bsb) }
+    latest_db_hash = latest_db.hash
+
+    deletions = existing_db_hash.reject { |bsb, _| latest_db_hash.key?(bsb) }
+    additions = latest_db_hash.reject { |bsb, _| existing_db_hash.key?(bsb) }
     modifications = {}
 
     latest_db_hash.each do |bsb, data|
@@ -20,11 +20,13 @@ namespace :bsb do
       modifications[bsb] = data
     end
 
-    changes_json = JSON.pretty_generate({
-      "additions": additions,
-      "deletions": deletions,
-      "modifications": modifications,
-    })
+    changes_json = JSON.pretty_generate(
+      {
+        additions: additions,
+        deletions: deletions,
+        modifications: modifications
+      }
+    )
 
     File.write(BSB::DB_FILEPATH, latest_db.json)
     File.write(BSB::CHANGES_FILEPATH, changes_json)

@@ -13,7 +13,7 @@ namespace :bsb do
       warn 'Missing bsb db "BSBDirectory"'
     end
   end
-  
+
   task :sync_bank_list, [:keyfile] do |_t, args|
     bank_list_filename = args[:keyfile]
 

@@ -5,6 +5,7 @@ require 'json'
 module BSB
   class BaseGenerator
     attr_reader :hash
+
     def initialize(hash)
       @hash = hash
     end
