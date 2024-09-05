@@ -5,7 +5,7 @@ require 'json'
 require 'bsb_number_validator'
 
 module BSB
-  DB_FILEPATH = "config/bsb_db.json"
+  DB_FILEPATH = 'config/bsb_db.json'
   class << self
     def lookup(number)
       bsb = normalize(number)
