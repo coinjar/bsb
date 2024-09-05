@@ -9,7 +9,6 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
     BSB::DB_FILEPATH = 'test/tmp/bsb_db.json'
     BSB::DatabaseGenerator::LEADER_WIDTH = 0
     Rake.application.rake_require('../lib/tasks/sync_bsb_db')
-    File.write(BSB::DB_FILEPATH, File.read('test/fixtures/bsb_db.json'))
   end
 
   after do
@@ -39,7 +38,7 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
           FiMnemonic: 'EST',
           Address: '123 Faker Street',
           Suburb: 'Ballina',
-          State: 'QLD',
+          State: 'NSW',
           Postcode: '1234',
           StreamCode: 'P',
           lastmodified: nil,
@@ -68,7 +67,7 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
           'Aviato2',
           '123 Faker Street',
           'Ballina',
-          'QLD',
+          'NSW',
           '1234',
           'P  '
         ]
@@ -82,8 +81,9 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
     mock.expect(:body, faraday_response, [])
     Faraday.stub(:new, mock) do
       Rake::Task['bsb:sync_bsb_db'].invoke
-      resultant_db = File.read(BSB::DB_FILEPATH).strip
-      assert_equal(resultant_db, expected_db)
     end
+
+    resultant_db = File.read(BSB::DB_FILEPATH).strip
+    assert_equal(resultant_db, expected_db)
   end
 end
