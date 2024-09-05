@@ -6,6 +6,7 @@ require 'bsb_number_validator'
 
 module BSB
   DB_FILEPATH = 'config/bsb_db.json'
+  CHANGES_FILEPATH = 'config/latest_update.json'
   class << self
     def lookup(number)
       bsb = normalize(number)
