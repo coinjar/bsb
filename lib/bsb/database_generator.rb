@@ -5,7 +5,8 @@ require 'faraday'
 
 module BSB
   class DatabaseGenerator < BaseGenerator
-    LEADER_WIDTH = 41
+    OUTPUT_PARAM_WIDTH = 30
+    LEADER_WIDTH = OUTPUT_PARAM_WIDTH + 11
 
     def self.load_file(filename)
       hash = {}
@@ -32,12 +33,11 @@ module BSB
       response = conn.post('/bsbquery/manual/paths/invoke') do |req|
         # Just following AusPayNet's recommendation with the formatting of this param. It's a required field
         # as well.
-        req.body = { outputparam: ' ' * (LEADER_WIDTH - 11) }.to_json
+        req.body = { outputparam: ' ' * OUTPUT_PARAM_WIDTH }.to_json
       end
 
       hash = {}
-      results = JSON.parse(response.body[LEADER_WIDTH..])
-      results.each do |bsb_config|
+      JSON.parse(response.body[LEADER_WIDTH..]).each do |bsb_config|
         bsb = bsb_config.fetch('BSBCode').delete('-')
         hash[bsb] = [
           bsb_config.fetch('FiMnemonic'),
