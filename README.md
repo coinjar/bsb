@@ -72,7 +72,7 @@ Other formats of APCA BSB data is available from http://bsb.apca.com.au.
 
 At the moment BSB data is a manual download from the Auspaynet site [here](https://bsb.auspaynet.com.au/).
 
-You will need to download two files, place them in `tmp/`:
+You will need to download the Key to Abbreviations and BSB Number file and place it in `tmp/`:
 - `Reference Documents` button > `Key to Abbreviations and BSB Number` in CSV format.
 
 Run the sync task with the files to complete sync of the latest data:
@@ -108,7 +108,7 @@ Browse the list of database changes, make a few queries on the website to ensure
 
 BSB DB data can be downloaded manually from the Auspaynet site [here](https://bsb.auspaynet.com.au/).
 
-You will need to download two files, place them in `tmp/`:
+You will need to download the BSB directory and place it in `tmp/`:
 - `Download BSB Files` button > `BSB Directory (Full Version)` in TEXT format.
 
 Run the sync task with the files to complete sync of the latest data:
