@@ -44,7 +44,7 @@ module BSB
     protected
 
     def data_hash
-      @data_hash ||= JSON.parse(File.read(File.expand_path('../config/bsb_db.json', __dir__)))
+      @data_hash ||= JSON.parse(File.read(File.expand_path("../#{DB_FILEPATH}", __dir__)))
     end
 
     def bank_list

@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 require 'bsb/base_generator'
+require 'bsb/aus_pay_net/client'
 require 'faraday'
 
 module BSB
   class DatabaseGenerator < BaseGenerator
-    OUTPUT_PARAM_WIDTH = 30
-    LEADER_WIDTH = OUTPUT_PARAM_WIDTH + 11
-
     def self.load_file(filename)
       hash = {}
       File.foreach(filename) do |line|
@@ -22,22 +20,10 @@ module BSB
     end
 
     def self.fetch_latest
-      conn = Faraday.new(
-        url: 'https://auspaynet-bicbsb-api-prod.azure-api.net',
-        headers: {
-          'Content-Type': 'application/json',
-          'Ocp-Apim-Subscription-Key': ENV.fetch('AUSPAYNET_SUB_KEY', nil)
-        }
-      )
-
-      response = conn.post('/bsbquery/manual/paths/invoke') do |req|
-        # Just following AusPayNet's recommendation with the formatting of this param. It's a required field
-        # as well.
-        req.body = { outputparam: ' ' * OUTPUT_PARAM_WIDTH }.to_json
-      end
+      response = BSB::AusPayNet::Client.fetch_all_bsbs
 
       hash = {}
-      JSON.parse(response.body[LEADER_WIDTH..]).each do |bsb_config|
+      JSON.parse(response.body).each do |bsb_config|
         bsb = bsb_config.fetch('BSBCode').delete('-')
         hash[bsb] = [
           bsb_config.fetch('FiMnemonic'),

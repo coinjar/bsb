@@ -2,6 +2,11 @@
 
 require 'bsb'
 require 'minitest/autorun'
+require 'minitest/stub_const'
+
+Minitest.after_run do
+  Dir.glob('test/tmp/**/*.json').each { File.delete(_1) }
+end
 
 class Account
   include ActiveModel::API

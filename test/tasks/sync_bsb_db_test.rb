@@ -6,50 +6,46 @@ require 'bsb/database_generator'
 
 describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
   before do
-    BSB::DB_FILEPATH = 'test/tmp/bsb_db.json'
-    BSB::CHANGES_FILEPATH = 'test/tmp/latest_update.json'
-    BSB::DatabaseGenerator::LEADER_WIDTH = 0
+    ENV.update('AUSPAYNET_SUB_KEY' => 'something')
     Rake.application.rake_require('../lib/tasks/sync_bsb_db')
     Rake::Task['bsb:sync_bsb_db'].reenable
-    File.write(BSB::DB_FILEPATH, File.read('test/fixtures/bsb_db.json'))
+    File.write('test/tmp/bsb_db.json', File.read('test/fixtures/bsb_db.json'))
   end
 
-  after do
-    Dir.glob('test/tmp/**/*.json').each { File.delete(_1) }
-  end
-
-  let(:faraday_response) do
-    JSON.dump(
-      [
-        {
-          BSBCode: '123-456',
-          BSBName: 'Aviato',
-          FiMnemonic: 'TST',
-          Address: '123 Fake Street',
-          Suburb: 'Dubbo',
-          State: 'NSW',
-          Postcode: '1234',
-          StreamCode: 'EH',
-          lastmodified: nil,
-          BIC: 'TSTAAU2SSYD',
-          BICINT: '',
-          repair: '00'
-        },
-        {
-          BSBCode: '987-654',
-          BSBName: 'Aviato2',
-          FiMnemonic: 'EST',
-          Address: '123 Faker Street',
-          Suburb: 'Ballina',
-          State: 'NSW',
-          Postcode: '1234',
-          StreamCode: 'P',
-          lastmodified: nil,
-          BIC: 'TSTAAU2SSYD',
-          BICINT: '',
-          repair: '00'
-        }
-      ]
+  let(:auspaynet_bsb_client_response) do
+    BSB::AusPayNet::Client::Response.new(
+      body: JSON.dump(
+        [
+          {
+            BSBCode: '123-456',
+            BSBName: 'Aviato',
+            FiMnemonic: 'TST',
+            Address: '123 Fake Street',
+            Suburb: 'Dubbo',
+            State: 'NSW',
+            Postcode: '1234',
+            StreamCode: 'EH',
+            lastmodified: nil,
+            BIC: 'TSTAAU2SSYD',
+            BICINT: '',
+            repair: '00'
+          },
+          {
+            BSBCode: '987-654',
+            BSBName: 'Aviato2',
+            FiMnemonic: 'EST',
+            Address: '123 Faker Street',
+            Suburb: 'Ballina',
+            State: 'NSW',
+            Postcode: '1234',
+            StreamCode: 'P',
+            lastmodified: nil,
+            BIC: 'TSTAAU2SSYD',
+            BICINT: '',
+            repair: '00'
+          }
+        ]
+      )
     )
   end
 
@@ -118,27 +114,28 @@ describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
     )
   end
 
-  it 'generates the expected bsb_db' do
-    mock = Minitest::Mock.new
-    mock.expect(:post, mock, [String])
-    mock.expect(:body, faraday_response, [])
-    Faraday.stub(:new, mock) do
-      Rake::Task['bsb:sync_bsb_db'].invoke
-    end
+  it 'generates the expected bsb_db and changes file' do
+    BSB.stub_consts(DB_FILEPATH: 'test/tmp/bsb_db.json', CHANGES_FILEPATH: 'test/tmp/latest_update.json') do
+      BSB::AusPayNet::Client.stub(:fetch_all_bsbs, auspaynet_bsb_client_response) do
+        Rake::Task['bsb:sync_bsb_db'].invoke
+      end
 
-    resultant_db = File.read(BSB::DB_FILEPATH).strip
-    assert_equal(resultant_db, expected_db)
+      resultant_db = File.read(BSB::DB_FILEPATH).strip
+      resultant_changes = File.read(BSB::CHANGES_FILEPATH).strip
+      assert_equal(resultant_db, expected_db)
+      assert_equal(resultant_changes, expected_changes)
+    end
   end
 
-  it 'generates the expected changes' do
-    mock = Minitest::Mock.new
-    mock.expect(:post, mock, [String])
-    mock.expect(:body, faraday_response, [])
-    Faraday.stub(:new, mock) do
-      Rake::Task['bsb:sync_bsb_db'].invoke
+  describe 'when the AUSPAYNET_SUB_KEY env var is not set' do
+    before do
+      ENV.delete('AUSPAYNET_SUB_KEY')
     end
 
-    resultant_changes = File.read(BSB::CHANGES_FILEPATH).strip
-    assert_equal(resultant_changes, expected_changes)
+    it 'raises the expected error' do
+      assert_raises BSB::AusPayNet::Client::MissingSubscriptionKeyError do
+        Rake::Task['bsb:sync_bsb_db'].invoke
+      end
+    end
   end
 end
