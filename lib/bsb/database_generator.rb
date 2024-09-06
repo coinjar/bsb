@@ -2,7 +2,6 @@
 
 require 'bsb/base_generator'
 require 'bsb/aus_pay_net/client'
-require 'faraday'
 
 module BSB
   class DatabaseGenerator < BaseGenerator
