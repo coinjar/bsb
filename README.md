@@ -78,7 +78,7 @@ You will need to download the Key to Abbreviations and BSB Number file and place
 Run the sync task with the files to complete sync of the latest data:
 
 ```sh
-rake bsb:sync_bank_list_['tmp/key to abbreviations and bsb numbers (august 2024).csv']
+rake bsb:sync_bank_list['tmp/key to abbreviations and bsb numbers (august 2024).csv']
 ```
 
 Browse the list of database changes, make a few queries on the website to ensure the results are the same.
