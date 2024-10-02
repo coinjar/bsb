@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://auspaynet-bicbsb-api-prod.azure-api.net/bsbquery/manual/paths/invoke
+    body:
+      encoding: UTF-8
+      string: '{"outputparam":"                              "}'
+    headers:
+      Content-type:
+      - application/json
+      Ocp-apim-subscription-key:
+      - "<AUSPAYNET_SUB_KEY>"
+      User-Agent:
+      - Faraday v2.10.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-cache
+      pragma:
+      - no-cache
+      transfer-encoding:
+      - chunked
+      content-type:
+      - text/plain; charset=utf-8
+      content-encoding:
+      - gzip
+      expires:
+      - "-1"
+      vary:
+      - Accept-Encoding
+      set-cookie:
+      - ARRAffinity=0aa69915266871205a67096b40953eafb333722c9d662666b4ee1cbd3af96c28;Path=/;HttpOnly;Secure;Domain=prod-07.australiasoutheast.logic.azure.com,
+        ARRAffinitySameSite=0aa69915266871205a67096b40953eafb333722c9d662666b4ee1cbd3af96c28;Path=/;HttpOnly;SameSite=None;Secure;Domain=prod-07.australiasoutheast.logic.azure.com
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-ms-workflow-run-id:
+      - '08584759810780029358383571724CU01'
+      x-ms-correlation-id:
+      - 8d349630-46fe-44ae-9d3f-0dc53071b48e
+      x-ms-client-tracking-id:
+      - '08584759810780029358383571724CU01'
+      x-ms-trigger-history-name:
+      - '08584759810780029358383571724CU01'
+      x-ms-execution-location:
+      - australiasoutheast
+      x-ms-workflow-system-id:
+      - "/locations/australiasoutheast/scaleunits/prod-07/workflows/55b07bc2b01c48cea922b9673bb16c54"
+      x-ms-workflow-id:
+      - 55b07bc2b01c48cea922b9673bb16c54
+      x-ms-workflow-version:
+      - '08584793971872858901'
+      x-ms-workflow-name:
+      - logicapp-all-wildcardquery
+      x-ms-tracking-id:
+      - 8d349630-46fe-44ae-9d3f-0dc53071b48e
+      x-ms-ratelimit-burst-remaining-workflow-writes:
+      - '2999'
+      x-ms-ratelimit-remaining-workflow-download-contentsize:
+      - '210888995'
+      x-ms-ratelimit-remaining-workflow-upload-contentsize:
+      - '214748112'
+      x-ms-ratelimit-time-remaining-directapirequests:
+      - '19998471'
+      x-ms-request-id:
+      - australiasoutheast:8d349630-46fe-44ae-9d3f-0dc53071b48e
+      request-context:
+      - appId=cid-v1:62fce8e1-7550-4725-83ec-f11232c5768f
+      date:
+      - Fri, 06 Sep 2024 12:30:08 GMT
+    body:
+      encoding: UTF-8
+      string: '{"outputparam":"Query results returned "}[{"BSBCode":"012-002","BSBName":"ANZ
+        Smart Choice","FiMnemonic":"ANZ","Address":"115 Pitt Street","Suburb":"Sydney","State":"NSW","Postcode":"2000","StreamCode":"PEH","lastmodified":null,"BIC":"ANZBAU3R","BICINT":"","repair":"00"},{"BSBCode":"012-003","BSBName":"Merged","FiMnemonic":"ANZ","Address":"Refer
+        to BSB 012-019","Suburb":"Sydney","State":"NSW","Postcode":"2000","StreamCode":"PEH","lastmodified":null,"BIC":"ANZBAU3R","BICINT":"","repair":"00"}]'
+  recorded_at: Fri, 06 Sep 2024 12:30:09 GMT
+recorded_with: VCR 6.3.1

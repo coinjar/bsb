@@ -2,6 +2,20 @@
 
 require 'bsb'
 require 'minitest/autorun'
+require 'minitest/stub_const'
+require 'vcr'
+
+Minitest.after_run do
+  Dir.glob('test/tmp/**/*.json').each { File.delete(_1) }
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'test/fixtures/vcr_cassettes'
+  config.hook_into :faraday
+  config.filter_sensitive_data('<AUSPAYNET_SUB_KEY>') do |interaction|
+    interaction.request.headers['Ocp-apim-subscription-key'][0]
+  end
+end
 
 class Account
   include ActiveModel::API

@@ -5,6 +5,8 @@ require 'json'
 require 'bsb_number_validator'
 
 module BSB
+  DB_FILEPATH = 'config/bsb_db.json'
+  CHANGES_FILEPATH = 'config/latest_update.json'
   class << self
     def lookup(number)
       bsb = normalize(number)
@@ -42,7 +44,7 @@ module BSB
     protected
 
     def data_hash
-      @data_hash ||= JSON.parse(File.read(File.expand_path('../config/bsb_db.json', __dir__)))
+      @data_hash ||= JSON.parse(File.read(File.expand_path("../#{DB_FILEPATH}", __dir__)))
     end
 
     def bank_list

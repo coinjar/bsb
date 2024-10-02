@@ -68,18 +68,53 @@ Two data sources are used:
 
 Other formats of APCA BSB data is available from http://bsb.apca.com.au.
 
-## Update source
+## Update BSB Bank List
 
 At the moment BSB data is a manual download from the Auspaynet site [here](https://bsb.auspaynet.com.au/).
 
-You will need to download two files, place them in `tmp/`:
+You will need to download the Key to Abbreviations and BSB Number file and place it in `tmp/`:
 - `Reference Documents` button > `Key to Abbreviations and BSB Number` in CSV format.
+
+Run the sync task with the files to complete sync of the latest data:
+
+```sh
+rake bsb:sync_bank_list['tmp/key to abbreviations and bsb numbers (august 2024).csv']
+```
+
+Browse the list of database changes, make a few queries on the website to ensure the results are the same.
+
+## Update BSB DB
+
+`config/bsb_db.json` can be updated by running the `bsb:sync_bsb_db` rake task.
+This task depends on you having you having an Aus Pay Net API subscription and key and that key being available in the
+`AUSPAYNET_SUB_KEY` environment variable.
+
+You can apply for an API subscription and key by visiting [AusPayNet's bsb page](https://bsb.auspaynet.com.au/),
+clicking the `API Registration` button and following the prompts.
+
+Once you have a key, the task can be run as follows
+
+```sh
+AUSPAYNET_SUB_KEY="your_key_here" rake bsb:sync_bsb_db
+```
+
+This will update the `config/bsb_db.json` file with the latest information and will produce a
+`config/latest_update.json` file that contains a breakdown of additions, deletions and modifications to make spot
+checking results easier.
+
+Browse the list of database changes, make a few queries on the website to ensure the results are the same.
+
+## Update BSB DB (Manual)
+
+BSB DB data can be downloaded manually from the Auspaynet site [here](https://bsb.auspaynet.com.au/).
+
+You will need to download the BSB directory and place it in `tmp/`:
 - `Download BSB Files` button > `BSB Directory (Full Version)` in TEXT format.
 
 Run the sync task with the files to complete sync of the latest data:
 
 ```sh
-rake bsb:sync['tmp/key to abbreviations and bsb numbers (august 2024).csv','tmp/BSBDirectoryAug24-341.txt']
+rake bsb:sync_bsb_db_manual['tmp/BSBDirectoryAug24-341.txt']
 ```
 
 Browse the list of database changes, make a few queries on the website to ensure the results are the same.
