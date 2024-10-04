@@ -1,0 +1,38 @@
+name: Update BSB DB
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15 1,8,15,22,29 * *" # “At 15:00 on day-of-month 1, 8, 15, 22, and 29.”
+
+jobs:
+  update-bsb:
+    runs-on: ubuntu-latest
+    env:
+      AUSPAYNET_SUB_KEY: ${{secrets.AUSPAYNET_SUB_KEY}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Fetch latest contents
+        run: bundle exec rake bsb:sync_bsb_db
+
+      - name: Remove latest_update file
+        run: rm -f config/latest_update.json
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update-bsb-db
+          title: Update BSB Database
+          body: |
+            This Pull Request was created via a Github Action.
+
+            The related workflow file is `.github/workflows/update_bsb_db.yml` and the changes are generated using the rake task `bsb:sync_bsb_db`
+
+            If you're unsure how to proceed with this PR, please see the [README](https://github.com/coinjar/bsb/blob/master/README.md#update-bsb-db)

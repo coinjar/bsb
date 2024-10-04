@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require("faraday")
+
 module BSB
   module AusPayNet
     module Client
