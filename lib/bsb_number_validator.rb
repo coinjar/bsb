@@ -4,6 +4,6 @@ require 'active_model'
 
 class BsbNumberValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    record.errors.add(attribute, :invalid) unless BSB.lookup(value)
+    record.errors.add(attribute, :invalid) unless value.nil? || BSB.lookup(value)
   end
 end
