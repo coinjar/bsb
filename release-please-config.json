@@ -1,0 +1,11 @@
+{
+  "release-type": "ruby",
+  "bump-minor-pre-major": true,
+  "bump-patch-for-minor-pre-major": true,
+  "packages": {
+    ".": {
+      "release-type": "ruby",
+      "version-file": "lib/bsb/version.rb"
+    }
+  }
+}
