@@ -1,5 +1,4 @@
 {
-  "target-branch": "dl/upgrade-release-please",
   "release-type": "ruby",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,

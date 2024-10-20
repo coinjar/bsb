@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - dl/upgrade-release-please
 
 permissions:
   contents: write
@@ -16,6 +15,8 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
+        with:
+          target-branch: master
 
       - if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
