@@ -29,7 +29,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           branch: update-bsb-db
-          title: Update BSB Database
+          title: "feat: Update BSB Database"
           body: |
             This Pull Request was created via a Github Action.
 
