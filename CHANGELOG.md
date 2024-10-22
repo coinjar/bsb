@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.5](https://github.com/coinjar/bsb/compare/v1.2.4...v1.2.5) (2024-10-22)
+
+
+### Bug Fixes
+
+* separate release and publish actions ([#68](https://github.com/coinjar/bsb/issues/68)) ([65597c0](https://github.com/coinjar/bsb/commit/65597c0dbee43b4515f48297fdf435072ff3768a))
+* Update BSB Database ([#70](https://github.com/coinjar/bsb/issues/70)) ([8f26926](https://github.com/coinjar/bsb/commit/8f2692676681f1c2f8aeba3c9ea188afb95359fc))
+
 ## [1.2.4](https://github.com/coinjar/bsb/compare/v1.2.3...v1.2.4) (2024-10-20)
 
 
