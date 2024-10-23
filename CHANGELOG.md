@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.7](https://github.com/coinjar/bsb/compare/v1.2.6...v1.2.7) (2024-10-23)
+
+
+### Bug Fixes
+
+* try publish on release create ([#73](https://github.com/coinjar/bsb/issues/73)) ([07b22d3](https://github.com/coinjar/bsb/commit/07b22d38fdb478a95cc25ada79c5257f865b1730))
+
 ## [1.2.6](https://github.com/coinjar/bsb/compare/v1.2.5...v1.2.6) (2024-10-23)
 
 
