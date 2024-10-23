@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/coinjar/bsb/compare/v1.2.5...v1.2.6) (2024-10-23)
+
+
+### Bug Fixes
+
+* move publish action file location ([#71](https://github.com/coinjar/bsb/issues/71)) ([35d4985](https://github.com/coinjar/bsb/commit/35d49858bd983e52ff61b73ff113de0e9deaf1b1))
+
 ## [1.2.5](https://github.com/coinjar/bsb/compare/v1.2.4...v1.2.5) (2024-10-22)
 
 
