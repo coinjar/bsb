@@ -6,10 +6,15 @@ require 'bsb/database_generator'
 
 describe 'sync_bsb_db rake task' do # rubocop:disable Metrics/BlockLength
   before do
+    @old_sub_key = ENV.fetch('AUSPAYNET_SUB_KEY', nil)
     ENV.update('AUSPAYNET_SUB_KEY' => 'something')
     Rake.application.rake_require('../lib/tasks/sync_bsb_db')
     Rake::Task['bsb:sync_bsb_db'].reenable
     File.write('test/tmp/bsb_db.json', File.read('test/fixtures/bsb_db.json'))
+  end
+
+  after do
+    ENV['AUSPAYNET_SUB_KEY'] = @old_sub_key
   end
 
   let(:auspaynet_bsb_client_response) do

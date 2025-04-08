@@ -7,9 +7,6 @@ module BSB
     module Client
       class MissingSubscriptionKeyError < StandardError; end
 
-      OUTPUT_PARAM_WIDTH = 30
-      LEADER_WIDTH = OUTPUT_PARAM_WIDTH + 11
-
       Response = Struct.new(:body, keyword_init: true)
 
       def self.fetch_all_bsbs
@@ -26,13 +23,12 @@ module BSB
           }
         ) do |faraday|
           faraday.response :raise_error
+          faraday.response :json
         end
 
-        response = conn.post('/bsbquery/manual/paths/invoke') do |req|
-          req.body = { outputparam: ' ' * OUTPUT_PARAM_WIDTH }.to_json
-        end
+        response = conn.post('/BSBQuery-V2/manual/paths/invoke')
 
-        Response.new(body: response.body[LEADER_WIDTH..])
+        Response.new(body: response.body.fetch('data'))
       end
     end
   end

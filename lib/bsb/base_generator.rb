@@ -10,8 +10,10 @@ module BSB
       @hash = hash
     end
 
-    def json
-      JSON.pretty_generate(@hash)
+    def json(sorted: false)
+      return JSON.pretty_generate(@hash) unless sorted
+
+      JSON.pretty_generate(@hash.sort.to_h)
     end
   end
 end
