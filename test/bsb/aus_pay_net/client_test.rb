@@ -5,7 +5,16 @@ require 'test_helper'
 
 describe BSB::AusPayNet::Client do
   describe '.fetch_all_bsbs' do
-    before { ENV['AUSPAYNET_SUB_KEY'] = 'something' }
+    before do
+      if ENV['AUSPAYNET_SUB_KEY'].nil?
+        @remove_auspay_key = true
+        ENV['AUSPAYNET_SUB_KEY'] = 'something'
+      end
+    end
+
+    after do
+      ENV.delete('AUSPAYNET_SUB_KEY') if @remove_auspay_key
+    end
 
     it 'returns the expected response' do
       VCR.use_cassette('auspaynet_fetch_all_bsbs') do
