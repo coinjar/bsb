@@ -28,7 +28,7 @@ namespace :bsb do
       }
     )
 
-    File.write(BSB::DB_FILEPATH, latest_db.json)
+    File.write(BSB::DB_FILEPATH, latest_db.json(sorted: true))
     File.write(BSB::CHANGES_FILEPATH, changes_json)
   end
 end
