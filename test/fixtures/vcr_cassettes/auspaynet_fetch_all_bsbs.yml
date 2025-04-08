@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: post
-    uri: https://auspaynet-bicbsb-api-prod.azure-api.net/bsbquery/manual/paths/invoke
+    uri: https://auspaynet-bicbsb-api-prod.azure-api.net/BSBQuery-V2/manual/paths/invoke
     body:
-      encoding: UTF-8
-      string: '{"outputparam":"                              "}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Content-type:
       - application/json
       Ocp-apim-subscription-key:
       - "<AUSPAYNET_SUB_KEY>"
       User-Agent:
-      - Faraday v2.10.1
+      - Faraday v2.12.0
   response:
     status:
       code: 200
@@ -25,56 +25,55 @@ http_interactions:
       transfer-encoding:
       - chunked
       content-type:
-      - text/plain; charset=utf-8
+      - application/json
       content-encoding:
       - gzip
       expires:
       - "-1"
       vary:
       - Accept-Encoding
-      set-cookie:
-      - ARRAffinity=0aa69915266871205a67096b40953eafb333722c9d662666b4ee1cbd3af96c28;Path=/;HttpOnly;Secure;Domain=prod-07.australiasoutheast.logic.azure.com,
-        ARRAffinitySameSite=0aa69915266871205a67096b40953eafb333722c9d662666b4ee1cbd3af96c28;Path=/;HttpOnly;SameSite=None;Secure;Domain=prod-07.australiasoutheast.logic.azure.com
       strict-transport-security:
       - max-age=31536000; includeSubDomains
       x-ms-workflow-run-id:
-      - '08584759810780029358383571724CU01'
+      - '08584575192488054635250345459CU61'
       x-ms-correlation-id:
-      - 8d349630-46fe-44ae-9d3f-0dc53071b48e
+      - a1c9ff2c-1071-48cb-89b9-abcba0c3ca33
       x-ms-client-tracking-id:
-      - '08584759810780029358383571724CU01'
+      - '08584575192488054635250345459CU61'
       x-ms-trigger-history-name:
-      - '08584759810780029358383571724CU01'
+      - '08584575192488054635250345459CU61'
       x-ms-execution-location:
       - australiasoutheast
       x-ms-workflow-system-id:
-      - "/locations/australiasoutheast/scaleunits/prod-07/workflows/55b07bc2b01c48cea922b9673bb16c54"
+      - "/locations/australiasoutheast/scaleunits/prod-58/workflows/b6cb1d81c12f46cd9433109c878b4ca2"
       x-ms-workflow-id:
-      - 55b07bc2b01c48cea922b9673bb16c54
+      - b6cb1d81c12f46cd9433109c878b4ca2
       x-ms-workflow-version:
-      - '08584793971872858901'
+      - '08584576177772871167'
       x-ms-workflow-name:
-      - logicapp-all-wildcardquery
+      - logicapp-all-wildcardquery-V2
       x-ms-tracking-id:
-      - 8d349630-46fe-44ae-9d3f-0dc53071b48e
+      - a1c9ff2c-1071-48cb-89b9-abcba0c3ca33
       x-ms-ratelimit-burst-remaining-workflow-writes:
-      - '2999'
+      - '2044'
       x-ms-ratelimit-remaining-workflow-download-contentsize:
-      - '210888995'
-      x-ms-ratelimit-remaining-workflow-upload-contentsize:
-      - '214748112'
+      - '140739431'
       x-ms-ratelimit-time-remaining-directapirequests:
-      - '19998471'
+      - '13634951'
       x-ms-request-id:
-      - australiasoutheast:8d349630-46fe-44ae-9d3f-0dc53071b48e
+      - australiasoutheast:a1c9ff2c-1071-48cb-89b9-abcba0c3ca33
       request-context:
       - appId=cid-v1:62fce8e1-7550-4725-83ec-f11232c5768f
       date:
-      - Fri, 06 Sep 2024 12:30:08 GMT
+      - Tue, 08 Apr 2025 04:47:18 GMT
     body:
-      encoding: UTF-8
-      string: '{"outputparam":"Query results returned "}[{"BSBCode":"012-002","BSBName":"ANZ
-        Smart Choice","FiMnemonic":"ANZ","Address":"115 Pitt Street","Suburb":"Sydney","State":"NSW","Postcode":"2000","StreamCode":"PEH","lastmodified":null,"BIC":"ANZBAU3R","BICINT":"","repair":"00"},{"BSBCode":"012-003","BSBName":"Merged","FiMnemonic":"ANZ","Address":"Refer
-        to BSB 012-019","Suburb":"Sydney","State":"NSW","Postcode":"2000","StreamCode":"PEH","lastmodified":null,"BIC":"ANZBAU3R","BICINT":"","repair":"00"}]'
-  recorded_at: Fri, 06 Sep 2024 12:30:09 GMT
+      encoding: ASCII-8BIT
+      string: '{"status":"success","message":"Query executed with filters applied","timestamp":"2025-04-08T04:47:16.863","requestId":"08584575192488054635250345459CU61","data":"[{\"BSBCode\":\"942-304\",\"BSBName\":\"Bank
+        of Sydney Ltd - Doncaster\",\"FiMnemonic\":\"LBA\",\"Address\":\"Shop 1, 700
+        Doncaster Road\",\"Suburb\":\"Doncaster\",\"State\":\"VIC\",\"Postcode\":\"3108\",\"StreamCode\":\"EH\",\"lastmodified\":\"2024-03-01T06:48:44\",\"BIC\":\"LIKIAU2S\",\"BICINT\":\"\",\"repair\":\"0\",\"FIName\":\"Bank
+        of Sydney Ltd\"},{\"BSBCode\":\"942-303\",\"BSBName\":\"Bank of Sydney Ltd
+        - Northcote\",\"FiMnemonic\":\"LBA\",\"Address\":\"25 Nthcote Ctr High & Seperation
+        St\",\"Suburb\":\"Northcote\",\"State\":\"VIC\",\"Postcode\":\"3070\",\"StreamCode\":\"EH\",\"lastmodified\":\"2024-03-01T06:48:44\",\"BIC\":\"LIKIAU2S\",\"BICINT\":\"\",\"repair\":\"0\",\"FIName\":\"Bank
+        of Sydney Ltd\"}]"}'
+  recorded_at: Tue, 08 Apr 2025 04:47:19 GMT
 recorded_with: VCR 6.3.1
