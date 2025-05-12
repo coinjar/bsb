@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/coinjar/bsb/compare/v1.2.14...v1.3.0) (2025-05-12)
+
+
+### Features
+
+* Use AusPayNet v2 BSBQuery API ([#91](https://github.com/coinjar/bsb/issues/91)) ([a082e7a](https://github.com/coinjar/bsb/commit/a082e7a1ba470282629435adb3f9478861121e2b))
+
+
+### Bug Fixes
+
+* restore published release trigger for workflow ([#96](https://github.com/coinjar/bsb/issues/96)) ([baf2cd0](https://github.com/coinjar/bsb/commit/baf2cd0e73a94292a9f55d25735d692dda1dce4e))
+* Update BSB Database ([#95](https://github.com/coinjar/bsb/issues/95)) ([f9ff594](https://github.com/coinjar/bsb/commit/f9ff594d5a6b73c72d6aca59e9b02604e045187e))
+* Update BSB Database ([#97](https://github.com/coinjar/bsb/issues/97)) ([831ef29](https://github.com/coinjar/bsb/commit/831ef29d6e98751d23c7148660f2b57507fcbffa))
+
 ## [1.2.14](https://github.com/coinjar/bsb/compare/v1.2.13...v1.2.14) (2025-04-02)
 
 
