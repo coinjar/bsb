@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'bundler', '~> 2.0'
+gem 'csv'
 gem 'faraday'
 gem 'minitest-stub-const'
 gem 'net-ftp', '~> 0.1.3'
