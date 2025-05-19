@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/coinjar/bsb/compare/v1.3.0...v1.4.0) (2025-05-19)
+
+
+### Features
+
+* add ruby 3.4 support ([#98](https://github.com/coinjar/bsb/issues/98)) ([02dd9a3](https://github.com/coinjar/bsb/commit/02dd9a39948edeefb7c1a868de8a34598789f094))
+
 ## [1.3.0](https://github.com/coinjar/bsb/compare/v1.2.14...v1.3.0) (2025-05-12)
 
 
