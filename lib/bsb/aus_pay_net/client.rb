@@ -26,7 +26,7 @@ module BSB
           faraday.response :json
         end
 
-        response = conn.post('/BSBQuery-V2/manual/paths/invoke')
+        response = conn.post('/BSBQuery-V2/manual/paths/invoke', '{}')
 
         Response.new(body: response.body.fetch('data'))
       end
