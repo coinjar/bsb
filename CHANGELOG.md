@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1](https://github.com/coinjar/bsb/compare/v1.4.0...v1.4.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* include empty body in request ([#101](https://github.com/coinjar/bsb/issues/101)) ([5b6cf27](https://github.com/coinjar/bsb/commit/5b6cf2777fff18a9cbd7fcf15c25be494967bcff))
+* Update BSB Database ([#103](https://github.com/coinjar/bsb/issues/103)) ([35c6049](https://github.com/coinjar/bsb/commit/35c60494c7914f1b8802cbb63c659cb85fc043c3))
+
 ## [1.4.0](https://github.com/coinjar/bsb/compare/v1.3.0...v1.4.0) (2025-06-09)
 
 
