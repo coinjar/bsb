@@ -3466,8 +3466,8 @@
   ],
   "012963": [
     "ANZ",
-    "Australand Property Pty Ltd",
-    "(Corp ARM to 012000)",
+    "FRASERS PROPERTY INDUSTRIAL",
+    "(Corp ARM to 012-000)",
     "Sydney",
     "NSW",
     "2000",
@@ -6715,8 +6715,8 @@
   ],
   "013901": [
     "ANZ",
-    "SELFWEALTH LTD",
-    "(Corp ARM to 013000)",
+    "SELFWEALTH PTY LTD",
+    "(Corp ARM to 013-000)",
     "Melbourne",
     "VIC",
     "3000",
@@ -6895,8 +6895,8 @@
   ],
   "013940": [
     "ANZ",
-    "SELFWEALTH LTD",
-    "(Corp ARM to 013000)",
+    "SELFWEALTH PTY LTD",
+    "(Corp ARM to 013-000)",
     "Melbourne",
     "VIC",
     "3000",
@@ -10802,7 +10802,7 @@
   "015891": [
     "ANZ",
     "Palmerston",
-    "46, 1 Rockdale Plaza Drive",
+    "27/1 Roystonea Ave",
     "Yarrawonga",
     "NT",
     "0830",
@@ -12250,7 +12250,7 @@
   ],
   "016949": [
     "ANZ",
-    "SelfWealth Limited ACMC",
+    "SELFWEALTH PTY LTD ACMC",
     "(Corp ARM to 016-000)",
     "Melbourne",
     "VIC",
@@ -12346,15 +12346,6 @@
     "NSW",
     "2000",
     " E "
-  ],
-  "016966": [
-    "ANZ",
-    "UBS AG",
-    "(Agency to 016-000)",
-    "Sydney",
-    "NSW",
-    "2000",
-    "PEH"
   ],
   "016986": [
     "ANZ",
@@ -15479,10 +15470,19 @@
     "2525",
     "PEH"
   ],
+  "032332": [
+    "WBC",
+    "CM & Separate Trust TD-NSW",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
+    "PEH"
+  ],
   "032334": [
     "WBC",
     "Belconnen",
-    "Shop 172, Level 3, Westfield S C",
+    "Shp 169 Lvl 3 Westfield Shop Centre",
     "Belconnen",
     "ACT",
     "2617",
@@ -15549,6 +15549,15 @@
     "Wetherill Park",
     "NSW",
     "2164",
+    "PEH"
+  ],
+  "032353": [
+    "WBC",
+    "CM & Separate Trust TD-ACT",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
     "PEH"
   ],
   "032360": [
@@ -18037,7 +18046,7 @@
   ],
   "032838": [
     "WBC",
-    "AAPT",
+    "Pipe Networks Pty Limited",
     "(NBFI Agency to 032-135)",
     "Sydney",
     "NSW",
@@ -18326,7 +18335,7 @@
   "032946": [
     "WBC",
     "Cash Management",
-    "Lvl14 Twr2 200 Barangaroo Ave",
+    "Twr 2 200 Barangaroo Ave",
     "Sydney",
     "NSW",
     "2000",
@@ -20402,6 +20411,15 @@
     "3152",
     "PEH"
   ],
+  "033332": [
+    "WBC",
+    "CM & Separate Trust TD-VIC",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
+    "PEH"
+  ],
   "033333": [
     "WBC",
     "DDR Dishonours VIC",
@@ -21565,7 +21583,7 @@
   ],
   "033807": [
     "WBC",
-    "Incitec Pivot Limited",
+    "Incitec Pivot Pty Ltd",
     "360 Collins Street",
     "Melbourne",
     "VIC",
@@ -23849,6 +23867,15 @@
     "4226",
     "PEH"
   ],
+  "034332": [
+    "WBC",
+    "CM & Separate Trust TD-QLD",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
+    "PEH"
+  ],
   "034336": [
     "WBC",
     "Mackay",
@@ -25341,6 +25368,24 @@
     "Palmerston",
     "NT",
     "0830",
+    "PEH"
+  ],
+  "035332": [
+    "WBC",
+    "CM & Separate Trust TD-SA",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
+    "PEH"
+  ],
+  "035353": [
+    "WBC",
+    "CM & Separate Trust TD-NT",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
     "PEH"
   ],
   "035382": [
@@ -27233,6 +27278,15 @@
     "6000",
     "PEH"
   ],
+  "036332": [
+    "WBC",
+    "CM & Separate Trust TD-WA",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
+    "PEH"
+  ],
   "036360": [
     "WBC",
     "Centralised Accounts, Perth",
@@ -28806,6 +28860,15 @@
     "Lockleys",
     "SA",
     "5032",
+    "PEH"
+  ],
+  "037332": [
+    "WBC",
+    "CM & Separate Trust TD-TAS",
+    "T2 200 Barangaroo Ave",
+    "Sydney",
+    "NSW",
+    "2000",
     "PEH"
   ],
   "037602": [
@@ -45902,7 +45965,7 @@
   "066202": [
     "CBA",
     "Success",
-    "Shp 332 Cockburn Gateway Shp City",
+    "Shop R-001, 816 Beeliar Drive",
     "Success",
     "WA",
     "6164",
@@ -61075,11 +61138,11 @@
   ],
   "084391": [
     "NAB",
-    "Stones Corner",
-    "85 Old Cleveland Rd",
-    "Greenslopes",
+    "Woolloongabba",
+    "Tenancy G4 01 148 Logan Rd",
+    "Woolloongabba",
     "QLD",
-    "4120",
+    "4102",
     "PEH"
   ],
   "084392": [
@@ -61238,10 +61301,10 @@
   "084447": [
     "NAB",
     "West End",
-    "85 Old Cleveland Rd",
-    "Greenslopes",
+    "Tenancy G4 01 148 Logan Rd",
+    "Woolloongabba",
     "QLD",
-    "4120",
+    "4102",
     "PEH"
   ],
   "084449": [
@@ -65909,7 +65972,7 @@
   "086412": [
     "NAB",
     "Ocean Keys Shopping Centre",
-    "Shop 2B 35 Ocean Keys Boulevard",
+    "Shop 165 36 Ocean Keys Bvd",
     "Clarkson",
     "WA",
     "6030",
@@ -70487,6 +70550,15 @@
     "4006",
     "PEH"
   ],
+  "122716": [
+    "BQL",
+    "Direct Banker Team",
+    "255 George Street",
+    "Sydney South",
+    "NSW",
+    "2000",
+    "PEH"
+  ],
   "122717": [
     "BQL",
     "Penrith",
@@ -70940,6 +71012,15 @@
   "122778": [
     "BQL",
     "Virgin Money Australia",
+    "100 Skyring Terrace",
+    "Newstead",
+    "QLD",
+    "4006",
+    "PEH"
+  ],
+  "122780": [
+    "BQL",
+    "Syndicated Banking",
     "100 Skyring Terrace",
     "Newstead",
     "QLD",
@@ -76562,6 +76643,24 @@
     "2000",
     " EH"
   ],
+  "247014": [
+    "CTI",
+    "IMILE DELIVERY & LOGISTIC PTY LTD",
+    "2 Park Street",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
+  "247015": [
+    "CTI",
+    "IMILE DELIVERY & LOGISTIC PTY LTD",
+    "2 Park Street",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
   "248004": [
     "CTI",
     "Mana Payment Australia Pty Ltd",
@@ -77905,7 +78004,7 @@
   ],
   "257273": [
     "MON",
-    "Monoova Payments",
+    "LightningBet",
     "Level 11, 201 Kent Street",
     "Sydney",
     "NSW",
@@ -77950,12 +78049,12 @@
   ],
   "257298": [
     "MON",
-    "Monoova Payments",
-    "level 11, 201 Kent St",
-    "Sydney",
+    "Carconnect Pty Ltd",
+    "U46 Slough Business Pk Holker St",
+    "Silverwater",
     "NSW",
-    "2000",
-    " E "
+    "2128",
+    " EH"
   ],
   "257300": [
     "MON",
@@ -96929,6 +97028,15 @@
     "2000",
     " EH"
   ],
+  "570004": [
+    "ASL",
+    "Aspire ASL BSB",
+    "Level 5, 10 Shelley St",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
   "572200": [
     "ASL",
     "Australian Settlements Limited",
@@ -97157,6 +97265,42 @@
   "585005": [
     "BNO",
     "Bano Pty Ltd",
+    "Level 13, 2 Bulletin Place",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
+  "585006": [
+    "BNO",
+    "Bolt",
+    "Level 13, 2 Bulletin Place",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
+  "585007": [
+    "BNO",
+    "Bolt",
+    "Level 13, 2 Bulletin Place",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
+  "585008": [
+    "BNO",
+    "Bolt",
+    "Level 13, 2 Bulletin Place",
+    "Sydney",
+    "NSW",
+    "2000",
+    " EH"
+  ],
+  "585010": [
+    "BNO",
+    "Bolt",
     "Level 13, 2 Bulletin Place",
     "Sydney",
     "NSW",
@@ -97622,6 +97766,96 @@
     "2000",
     " E "
   ],
+  "636070": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636071": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636072": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636073": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636074": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636075": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636076": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636077": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636078": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
+  "636079": [
+    "HAY",
+    "HAY LIMITED",
+    "22-24 Hutchinson Street",
+    "Surry Hills",
+    "NSW",
+    "2010",
+    " E "
+  ],
   "636100": [
     "HAY",
     "HAY LIMITED",
@@ -97822,11 +98056,11 @@
   ],
   "636310": [
     "HAY",
-    "HAY LIMITED",
-    "22-24 Hutchinson Street",
-    "Surry Hills",
-    "NSW",
-    "2010",
+    "Budgetly",
+    "Level 1, 305 / 241 Adelaide Street",
+    "Brisbane",
+    "QLD",
+    "4000",
     " E "
   ],
   "636380": [
@@ -97912,11 +98146,11 @@
   ],
   "636700": [
     "HAY",
-    "HAY LIMITED",
-    "22-24 Hutchinson Street",
-    "Surry Hills",
-    "NSW",
-    "2010",
+    "Bless Payments",
+    "Level 1, 41-47 Colin Street",
+    "West Perth",
+    "WA",
+    "6005",
     " E "
   ],
   "636888": [
@@ -108109,11 +108343,11 @@
   ],
   "702011": [
     "CUS",
-    "GATEWAY BANK LTD",
-    "LEVEL 10, 68 YORK STREET",
-    "Sydney",
-    "NSW",
-    "2000",
+    "Indue (gateway)",
+    "LEVEL 10, 88 Tribune street",
+    "South Brisbane Bc",
+    "QLD",
+    "4101",
     " EH"
   ],
   "702027": [
@@ -111764,7 +111998,7 @@
   "732334": [
     "WBC",
     "Belconnen",
-    "Shop 172, Level 3, Westfield S C",
+    "Shp 169 Lvl 3 Westfield Shop Centre",
     "Belconnen",
     "ACT",
     "2617",
@@ -136964,7 +137198,7 @@
   "766202": [
     "CBA",
     "Success",
-    "Shp 332 Cockburn Gateway Shp City",
+    "Shop R-001, 816 Beeliar Drive",
     "Success",
     "WA",
     "6164",
@@ -138005,6 +138239,15 @@
     "2000",
     " E "
   ],
+  "771001": [
+    "AFT",
+    "AFT AU PTY LTD",
+    "Level 5, 10 Shelley Street",
+    "Sydney",
+    "NSW",
+    "2000",
+    " E "
+  ],
   "772772": [
     "REV",
     "Revolut Payments Australia Pty Ltd",
@@ -138516,7 +138759,7 @@
     "Adelaide",
     "SA",
     "5000",
-    "PEH"
+    "PE "
   ],
   "802254": [
     "CRU",
@@ -138615,7 +138858,7 @@
     "Armidale",
     "NSW",
     "2350",
-    " EH"
+    " E "
   ],
   "802318": [
     "CRU",
@@ -140946,7 +141189,7 @@
     "Melbourne",
     "VIC",
     "3000",
-    " E "
+    " EH"
   ],
   "808207": [
     "CRU",
@@ -141045,7 +141288,7 @@
     "Melbourne",
     "VIC",
     "3000",
-    " E "
+    " EH"
   ],
   "808218": [
     "CRU",
@@ -141706,7 +141949,7 @@
   ],
   "808291": [
     "CRU",
-    "ZAI Australia Pty Ltd",
+    "SingX",
     "(Agency to 803320)",
     "Melbourne",
     "VIC",
@@ -141715,7 +141958,7 @@
   ],
   "808292": [
     "CRU",
-    "ZAI Australia Pty Ltd",
+    "Bonded Payments",
     "(Agency to 803320)",
     "Melbourne",
     "VIC",
@@ -141724,7 +141967,7 @@
   ],
   "808293": [
     "CRU",
-    "ZAI Australia Pty Ltd",
+    "SupplyWise AU",
     "(Agency to 803320)",
     "Melbourne",
     "VIC",
@@ -141733,7 +141976,7 @@
   ],
   "808294": [
     "CRU",
-    "ZAI Australia Pty Ltd",
+    "Remit Circle",
     "(Agency to 803320)",
     "Melbourne",
     "VIC",
@@ -141742,7 +141985,7 @@
   ],
   "808295": [
     "CRU",
-    "ZAI Australia Pty Ltd",
+    "Recan",
     "(Agency to 803320)",
     "Melbourne",
     "VIC",
@@ -141796,92 +142039,92 @@
   ],
   "808301": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808302": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808303": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808304": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808305": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808306": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808307": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808308": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808309": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808310": [
     "CRU",
-    "Cuscal Limited",
-    "Level 11, 201 Sussex Street",
-    "Sydney",
-    "NSW",
-    "2000",
+    "ZAI Australia Pty Ltd",
+    "(Agency to 803320)",
+    "Melbourne",
+    "VIC",
+    "3000",
     " E "
   ],
   "808311": [
@@ -142336,7 +142579,7 @@
   ],
   "834696": [
     "GSB",
-    "Great Southern Bank Business - BS 1",
+    "Solo Money",
     "Level 27 300 George Street",
     "Brisbane City",
     "QLD",
@@ -142696,7 +142939,7 @@
   ],
   "840107": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "DashBet",
     "3/66 Centennial Circuit",
     "Byron Bay",
     "NSW",
@@ -142705,7 +142948,7 @@
   ],
   "840108": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Entain",
     "3/66 Centennial Circuit",
     "Byron Bay",
     "NSW",
@@ -142714,7 +142957,7 @@
   ],
   "840109": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Pointsbet",
     "3/66 Centennial Circuit",
     "Byron Bay",
     "NSW",
@@ -142723,7 +142966,7 @@
   ],
   "840110": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Lottery",
     "3/66 Centennial Circuit",
     "Byron Bay",
     "NSW",
@@ -142759,7 +143002,7 @@
   ],
   "840114": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Colossalbet",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -142813,7 +143056,7 @@
   ],
   "840120": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Bluebet",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -142876,7 +143119,7 @@
   ],
   "840127": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "BetRight",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -142921,7 +143164,7 @@
   ],
   "840132": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Robwater House",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -142930,7 +143173,7 @@
   ],
   "840133": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Upcoz",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -142939,7 +143182,7 @@
   ],
   "840134": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Ecash",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143038,7 +143281,7 @@
   ],
   "840145": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Betzooka",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143047,7 +143290,7 @@
   ],
   "840146": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Next2Go",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143488,7 +143731,7 @@
   ],
   "840303": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Ailo",
     "3/66 Centennial Circuit",
     "Byron Bay",
     "NSW",
@@ -143758,7 +144001,7 @@
   ],
   "840407": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Glider Pay",
     "3/66 Centennial Circuit",
     "Byron Bay",
     "NSW",
@@ -143830,7 +144073,7 @@
   ],
   "840415": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Superhero",
     "Byron Bay, NSW, 2481",
     "Byron Bay",
     "NSW",
@@ -143839,7 +144082,7 @@
   ],
   "840416": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Moomoo",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143848,7 +144091,7 @@
   ],
   "840417": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "PFG",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143857,7 +144100,7 @@
   ],
   "840418": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Cache",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143866,7 +144109,7 @@
   ],
   "840419": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Flexewallet",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143893,7 +144136,7 @@
   ],
   "840422": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Xushi Australia",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -143902,7 +144145,7 @@
   ],
   "840423": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Quadcode",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144649,7 +144892,7 @@
   ],
   "840601": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Limepay",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144658,7 +144901,7 @@
   ],
   "840602": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Marmalade",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144667,7 +144910,7 @@
   ],
   "840603": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Novatti",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144676,7 +144919,7 @@
   ],
   "840604": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "IPS",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144685,7 +144928,7 @@
   ],
   "840605": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Powerpay",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144694,7 +144937,7 @@
   ],
   "840606": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Quickpay",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144703,7 +144946,7 @@
   ],
   "840607": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Squarepay",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144712,7 +144955,7 @@
   ],
   "840608": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Zenith Payments",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144730,7 +144973,7 @@
   ],
   "840610": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Till Payments",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144739,7 +144982,7 @@
   ],
   "840611": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Mint",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144748,7 +144991,7 @@
   ],
   "840612": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Paysecure",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
@@ -144757,7 +145000,7 @@
   ],
   "840613": [
     "SPL",
-    "Zepto Payments Pty Ltd - Corporate",
+    "Cirralto",
     "Level G/36 Parkes Ave",
     "Byron Bay",
     "NSW",
