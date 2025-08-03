@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/coinjar/bsb/compare/v1.4.1...v1.4.2) (2025-08-03)
+
+
+### Bug Fixes
+
+* Update BSB Database ([#104](https://github.com/coinjar/bsb/issues/104)) ([ac3ab4d](https://github.com/coinjar/bsb/commit/ac3ab4d652741443dff8c293adb920464a28234f))
+
 ## [1.4.1](https://github.com/coinjar/bsb/compare/v1.4.0...v1.4.1) (2025-07-09)
 
 
