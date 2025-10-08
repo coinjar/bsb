@@ -15,5 +15,6 @@ mkmf.log
 *.gem
 .env
 AUTHOR
+.DS_Store
 
 Gemfile.lock
