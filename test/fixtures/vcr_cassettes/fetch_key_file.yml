@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      date:
+      - Fri, 07 Nov 2025 02:35:40 GMT
+      content-length:
+      - '0'
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      location:
+      - https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(october%202025).csv
+      strict-transport-security:
+      - max-age=604800
+      x-frame-options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - sniff
+      cf-cache-status:
+      - DYNAMIC
+      cf-ray:
+      - 99a9704cbf57e6ce-MEL
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 07 Nov 2025 02:35:40 GMT
+- request:
+    method: get
+    uri: https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(october%202025).csv
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 07 Nov 2025 02:35:41 GMT
+      content-type:
+      - application/octet-stream
+      content-length:
+      - '5719'
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      last-modified:
+      - Sun, 02 Nov 2025 21:07:11 GMT
+      etag:
+      - W/"MTAtMDAwMi0wLUNBMjU4RDM2MDA3NDAzNUEtOUI4MEVCRkE0NEE5OTNFNkNBMjU3OTY1MDAxNzY4MkE="
+      strict-transport-security:
+      - max-age=604800
+      x-frame-options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - sniff
+      cf-cache-status:
+      - DYNAMIC
+      cf-ray:
+      - 99a9704dadb89344-MEL
+    body:
+      encoding: UTF-8
+      string: "BSB Owner,Owner Name,BSB Prefix\r\nABA,Auswide Bank Ltd,645\r\nABA,Auswide
+        Bank Ltd,656\r\nADC,Australian Military Bank Limited,642\r\nADL,Adelaide Bank
+        (a division of Bendigo and Adelaide Bank Limited),610\r\nADV,Advance Bank
+        Australia (a division of Westpac Banking Corp),46\r\nAFT,AFT AU Pty Ltd,771\r\nALX,Alex
+        Bank Pty Ltd,259\r\nAMP,AMP Bank Limited,939\r\nANZ,Australia & New Zealand
+        Banking Group Limited,1\r\nAPO,Australia Post (Money Orders),90\r\nARA,Arab
+        Bank Australia Limited,917\r\nASL,Australian Settlements Limited,57\r\nAVE,Avenue
+        Bank Ltd,890\r\nBAE,B&E Ltd trading as Bank of Us,632\r\nBAL,Bank of America
+        National Association,23\r\nBAU,Bank Australia Limited,313\r\nBBL,Bendigo and
+        Adelaide Bank Limited,633\r\nBCA,Bank of China (Australia) Limited,980\r\nBCC,Police
+        & Nurses Limited,533\r\nBCP,BC Payments Australia Pty Ltd,252\r\nBML,Bank
+        of Melbourne (a division of Westpac Banking Corp),55\r\nBNK,BNK Banking Corporation
+        Ltd ,369\r\nBNO,Bano Pty Ltd,585\r\nBNP,BNP Paribas,22\r\nBOC,Bank of China,35\r\nBOM,Bank
+        of Melbourne (a division of Westpac Banking Corp),19\r\nBOT,\"MUFG Bank, Ltd.\",29\r\nBPS,BNP
+        Paribas Securities Services,255\r\nBQL,Bank of Queensland Limited,12\r\nBSA,BankSA
+        (a division of Westpac Banking Corp),10\r\nBTA,Bankers Trust Australia (a
+        division of Westpac Banking Corp),26\r\nBWA,Bankwest (a division of Commonwealth
+        Bank of Australia),30\r\nBYB,Beyond Bank Australia Limited,325\r\nCAG,Corporate
+        Alliance Group Pty Ltd,599\r\nCAP,Capricornian Ltd (The),813\r\nCBA,Commonwealth
+        Bank of Australia,6\r\nCBA,Commonwealth Bank of Australia,76\r\nCBL,Challenge
+        Bank (a division of Westpac Banking Corp),47\r\nCCB,\"China Construction Bank
+        Corporation, Sydney Branch\",888\r\nCEB,China Everbright Bank Co Ltd,681\r\nCFC,Community
+        First Credit Union Limited,512\r\nCMB,\"JP Morgan Chase Bank, National Association\",21\r\nCNA,Citibank
+        N.A.,510\r\nCOM,\"Bank of Communications Co., Ltd Sydney Branch\",818\r\nCRU,Cuscal
+        Limited,80\r\nCSA,Credit Union SA Ltd,855\r\nCST,Colonial State Bank,40\r\nCTI,Citibank
+        N.A.,24\r\nCUA,Credit Union Australia Ltd (trading as Great Southern Bank),814\r\nCUS,Indue
+        Ltd,70\r\nDBA,Deutsche Bank Aktiengesellschaft,41\r\nDBL,Defence Bank Limited,833\r\nDBS,DBS
+        Bank Ltd. (Australia Branch),889\r\nENC,Australian Mutual Bank Limited,823\r\nFMO,Paynow
+        Technology Pty Ltd,850\r\nFPX,Flash Partners Pty Ltd,370\r\nGBS,Greater Bank
+        (a division of Newcastle Greater Mutual Group Ltd),630\r\nGBS,Greater Bank
+        (a division of Newcastle Greater Mutual Group Ltd),637\r\nGBS,Greater Bank
+        (a division of Newcastle Greater Mutual Group Ltd),680\r\nGCB,G&C Mutual Bank
+        Limited,659\r\nGNI,\"ING Bank, NV (Sydney Branch)\",936\r\nGPA,Global Payments
+        Australia 1 Pty Ltd,820\r\nGSB,Credit Union Australia Ltd (trading as Great
+        Southern Bank),834\r\nGTW,Gateway Bank Ltd,676\r\nHAY,Cuscal Limited,636\r\nHBA,HSBC
+        Bank Australia Limited,34\r\nHBS,Heritage and People's Choice Limited,638\r\nHBS,Heritage
+        and People's Choice Limited,880\r\nHCC,Regional Australia Bank Limited,721\r\nHIC,\"Bank
+        of Heritage Isle, a division of Police Bank Ltd\",723\r\nHOM,Home Building
+        Society (a division of Bank of Queensland Limited),639\r\nHPC,Cuscal Limited,671\r\nHSB,\"Hongkong
+        & Shanghai Banking Corporation Limited (The), Australian Branch\",985\r\nHUM,Hume
+        Bank Limited,640\r\nIBA,International Bank of Australia Pty Limited,688\r\nIBK,Industrial
+        and Commercial Bank of China Limited,819\r\nICB,\"Mega International Commercial
+        Bank Co, Ltd\",931\r\nIMB,IMB Ltd,641\r\nIMB,IMB Ltd,647\r\nING,ING Bank (Australia)
+        Limited (trading as ING),923\r\nINV,BOQ Specialist (a division of Bank of
+        Queensland Limited),951\r\nJUD,Judo Bank Pty Ltd,725\r\nKEB,KEB Hana Bank,323\r\nLBA,Bank
+        of Sydney Ltd,942\r\nMBL,Macquarie Bank Limited,18\r\nMCB,\"Mizuho Bank, Ltd\",918\r\nMEB,Bank
+        of Queensland Limited,944\r\nMET,Norfina Limited,48\r\nMMB,Maitland Mutual
+        Limited trading as The Mutual Bank,646\r\nMMP,Unity Bank Limited,882\r\nMON,Monoova
+        Payments Pty Ltd,257\r\nMSL,Tyro Payments Limited,969\r\nNAB,National Australia
+        Bank Limited,8\r\nNEW,Newcastle Greater Mutual Group Ltd,650\r\nOCB,Oversea-Chinese
+        Banking Corporation Limited,45\r\nONE,in1bank Limited,311\r\nPCU,Police Bank
+        Ltd (trading as Police Bank),815\r\nPIB,Rabobank Australia Limited,14\r\nPNB,Police
+        & Nurses Limited,777\r\nPPB,Pioneer Permanent Building Society (a division
+        of Bank of Queensland Limited),653\r\nQCB,Queensland Country Bank Limited,654\r\nQTM,Members
+        Banking Group Limited Trading as RACQ Bank,514\r\nRAB,Regional Australia Bank
+        Limited,932\r\nRBA,Reserve Bank of Australia,9\r\nRCU,Railways Credit Union
+        Limited t/a MOVE Bank,724\r\nREV,Revolut Payments Australia Pty Ltd,772\r\nROK,MyState
+        Bank Limited,655\r\nSCB,\"Standard Chartered Bank, Australia Branch\",43\r\nSCU,Summerland
+        Financial Servces Limited (Trading as Summerland Bank),728\r\nSEL,Australian
+        Mutual Bank Limited,611\r\nSGP,St.George Bank (a division of Westpac Banking
+        Corp),33\r\nSHP,Australian Settlements Limited,635\r\nSKY,Australian Unity
+        Bank Limited,825\r\nSMB,Sumitomo Mitsui Banking Corporation,911\r\nSNX,Southern
+        Cross Credit Union Ltd,722\r\nSPL,Zepto Payments Pty Ltd,840\r\nSSB,State
+        Street Bank and Trust Company,913\r\nSTG,St.George Bank (a division of Westpac
+        Banking Corp) ,11\r\nSTH,IMB Ltd,824\r\nSUN,Norfina Limited,66\r\nT&C,Town
+        & Country Bank (a division of Australia & New Zealand Banking Group Limited),15\r\nTBB,\"Taiwan
+        Business Bank, Sydney Branch\",943\r\nTBT,Colonial Trust Bank,42\r\nTBT,Colonial
+        Trust Bank,52\r\nTCU,Teachers Mutual Bank Limited,812\r\nUBS,\"UBS AG, Australia
+        Branch\",946\r\nUFS,Uniting Financial Services,634\r\nUOB,United Overseas
+        Bank Limited,922\r\nVOL,Volt Bank Limited,517\r\nWBC,Westpac Banking Corporation,3\r\nWBC,Westpac
+        Banking Corporation,4\r\nWBC,Westpac Banking Corporation,73\r\nWBC,Westpac
+        Banking Corporation,74\r\nWCU,Warwick Credit Union Ltd (Trading as Darling
+        Downs Bank),817\r\nWSE,Wise Australia Pty Ltd,774\r\nYOU,National Australia
+        Bank Limited,670\r\n"
+  recorded_at: Fri, 07 Nov 2025 02:35:41 GMT
+recorded_with: VCR 6.3.1
