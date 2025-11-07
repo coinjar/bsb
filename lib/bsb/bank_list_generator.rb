@@ -7,7 +7,7 @@ module BSB
   class BankListGenerator < BaseGenerator
     def self.load_file(filename)
       hash = {}
-      CSV.foreach(filename) do |row|
+      CSV.foreach(filename, headers: true) do |row|
         row[2].split(', ').each do |prefix|
           prefix = prefix.chomp.rjust(2, '0')
           hash[prefix] = row[1]
