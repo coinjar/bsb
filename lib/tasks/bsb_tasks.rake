@@ -33,21 +33,21 @@ namespace :bsb do
     end
   end
 
-  desc "Fetch the BSB CSV from AusPayNet (default output: tmp/key.csv)"
-  task :fetch_key_file, [:output_path] do |t, args|
+  desc 'Fetch the BSB CSV from AusPayNet (default output: tmp/key.csv)'
+  task :fetch_key_file, [:output_path] do |_t, args|
     args.with_defaults(output_path: 'tmp/key.csv')
 
     url = 'https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent'
     uri = URI.parse(url)
 
-    def fetch_with_redirect(uri, limit = 10, user_agent = "CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)")
+    def fetch_with_redirect(uri, limit = 10, user_agent = 'CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)')
       raise 'Too many redirects' if limit <= 0
 
       http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = (uri.scheme == "https")
+      http.use_ssl = (uri.scheme == 'https')
 
       request = Net::HTTP::Get.new(uri)
-      request["User-Agent"] = user_agent
+      request['User-Agent'] = user_agent
 
       response = http.request(request)
 
@@ -55,7 +55,7 @@ namespace :bsb do
       when Net::HTTPSuccess
         response.body
       when Net::HTTPRedirection
-        location = response["location"]
+        location = response['location']
         new_uri = URI.join(uri, location)
         fetch_with_redirect(new_uri, limit - 1, user_agent)
       else
@@ -69,9 +69,7 @@ namespace :bsb do
     output_path = args[:output_path]
     FileUtils.mkdir_p(File.dirname(output_path))
 
-    File.open(output_path, 'wb') do |file|
-      file.write(csv_data)
-    end
+    File.binwrite(output_path, csv_data)
 
     puts "Saved CSV to #{output_path}"
   end
