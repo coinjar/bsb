@@ -13,7 +13,9 @@ VCR.configure do |config|
   config.cassette_library_dir = 'test/fixtures/vcr_cassettes'
   config.hook_into :faraday
   config.filter_sensitive_data('<AUSPAYNET_SUB_KEY>') do |interaction|
-    interaction.request.headers['Ocp-apim-subscription-key'][0]
+    if interaction.request.headers['Ocp-apim-subscription-key']
+      interaction.request.headers['Ocp-apim-subscription-key'][0]
+    end
   end
 end
 
