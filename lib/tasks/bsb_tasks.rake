@@ -4,9 +4,8 @@ require 'bsb'
 require 'bsb/database_generator'
 require 'bsb/bank_list_generator'
 
-require 'net/http'
-require 'uri'
 require 'fileutils'
+require 'faraday/follow_redirects'
 
 namespace :bsb do
   desc 'Sync config/*.json.'
@@ -38,37 +37,21 @@ namespace :bsb do
     args.with_defaults(output_path: 'tmp/key.csv')
 
     url = 'https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent'
-    uri = URI.parse(url)
-
-    def fetch_with_redirect(uri, limit = 10, user_agent = 'CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)')
-      raise 'Too many redirects' if limit <= 0
-
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = (uri.scheme == 'https')
-
-      request = Net::HTTP::Get.new(uri)
-      request['User-Agent'] = user_agent
-
-      response = http.request(request)
-
-      case response
-      when Net::HTTPSuccess
-        response.body
-      when Net::HTTPRedirection
-        location = response['location']
-        new_uri = URI.join(uri, location)
-        fetch_with_redirect(new_uri, limit - 1, user_agent)
-      else
-        raise "Failed to fetch CSV: #{response.code} #{response.message}"
-      end
-    end
+    user_agent = 'CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)'
 
     puts "Fetching CSV from #{url}..."
-    csv_data = fetch_with_redirect(uri)
+
+    response = Faraday.new(url: url) do |f|
+      f.headers['User-Agent'] = user_agent
+      f.response :raise_error
+      f.response :follow_redirects
+      f.adapter Faraday.default_adapter
+    end.get
+
+    csv_data = response.body
 
     output_path = args[:output_path]
     FileUtils.mkdir_p(File.dirname(output_path))
-
     File.binwrite(output_path, csv_data)
 
     puts "Saved CSV to #{output_path}"
