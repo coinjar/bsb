@@ -40,19 +40,24 @@ namespace :bsb do
     url = 'https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent'
     uri = URI.parse(url)
 
-    def fetch_with_redirect(uri, limit = 10)
+    def fetch_with_redirect(uri, limit = 10, user_agent = "CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)")
       raise 'Too many redirects' if limit <= 0
 
-      response = Net::HTTP.get_response(
-        Net::HTTP::Get.new(uri, { 'User-Agent' => 'CoinjarBSBGemUpdater/1.0 (https://github.com/coinjar/bsb)' })
-      )
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = (uri.scheme == "https")
+
+      request = Net::HTTP::Get.new(uri)
+      request["User-Agent"] = user_agent
+
+      response = http.request(request)
+
       case response
       when Net::HTTPSuccess
         response.body
       when Net::HTTPRedirection
-        location = response['location']
+        location = response["location"]
         new_uri = URI.join(uri, location)
-        fetch_with_redirect(new_uri, limit - 1)
+        fetch_with_redirect(new_uri, limit - 1, user_agent)
       else
         raise "Failed to fetch CSV: #{response.code} #{response.message}"
       end

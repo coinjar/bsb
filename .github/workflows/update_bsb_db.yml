@@ -19,11 +19,17 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Fetch latest key file
+        run: bundle exec rake bsb:fetch_key_file[./tmp/key.csv]
+
+      - name: Update BSB Bank List
+        run: bundle exec rake bsb:sync_bank_list[./tmp/key.csv]
+
       - name: Fetch latest contents
         run: bundle exec rake bsb:sync_bsb_db
 
       - name: Remove latest_update file
-        run: rm -f config/latest_update.json
+        run: rm -f config/latest_update.json && rm -f ./tmp/key.csv
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
