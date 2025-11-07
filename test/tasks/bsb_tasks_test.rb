@@ -4,7 +4,7 @@ require 'test_helper'
 require 'rake'
 require 'fileutils'
 
-describe 'bsb rake task', type: :task do
+describe 'bsb tasks rake task', type: :task do
   before(:all) do
     Rake.application.rake_require('../lib/tasks/bsb_tasks')
     Rake::Task.define_task(:environment)
