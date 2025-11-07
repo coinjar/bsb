@@ -21,6 +21,7 @@ namespace :bsb do
     end
   end
 
+  desc 'Sync bank list from a keyfile'
   task :sync_bank_list, [:keyfile] do |_t, args|
     bank_list_filename = args[:keyfile]
 
