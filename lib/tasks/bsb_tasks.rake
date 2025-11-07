@@ -4,6 +4,10 @@ require 'bsb'
 require 'bsb/database_generator'
 require 'bsb/bank_list_generator'
 
+require 'net/http'
+require 'uri'
+require 'fileutils'
+
 namespace :bsb do
   desc 'Sync config/*.json.'
   task :sync_bsb_db_manual, [:bsbfile] do |_t, args|
@@ -26,5 +30,43 @@ namespace :bsb do
     else
       warn 'Missing bank list "KEY TO ABBREVIATIONS AND BSB NUMBERS"'
     end
+  end
+
+  desc "Fetch the BSB CSV from AusPayNet (default output: tmp/key.csv)"
+  task :fetch_key_file, [:output_path] do |t, args|
+    args.with_defaults(output_path: 'tmp/key.csv')
+
+    url = 'https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent'
+    uri = URI.parse(url)
+
+    def fetch_with_redirect(uri, limit = 10)
+      raise 'Too many redirects' if limit <= 0
+
+      response = Net::HTTP.get_response(
+        Net::HTTP::Get.new(uri, { 'User-Agent' => 'CoinjarBSBGemUpdater/1.0 (https://github.com/coinjar/bsb)' })
+      )
+      case response
+      when Net::HTTPSuccess
+        response.body
+      when Net::HTTPRedirection
+        location = response['location']
+        new_uri = URI.join(uri, location)
+        fetch_with_redirect(new_uri, limit - 1)
+      else
+        raise "Failed to fetch CSV: #{response.code} #{response.message}"
+      end
+    end
+
+    puts "Fetching CSV from #{url}..."
+    csv_data = fetch_with_redirect(uri)
+
+    output_path = args[:output_path]
+    FileUtils.mkdir_p(File.dirname(output_path))
+
+    File.open(output_path, 'wb') do |file|
+      file.write(csv_data)
+    end
+
+    puts "Saved CSV to #{output_path}"
   end
 end
