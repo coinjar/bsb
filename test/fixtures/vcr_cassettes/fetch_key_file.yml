@@ -2,45 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)
-  response:
-    status:
-      code: 302
-      message: Found
-    headers:
-      date:
-      - Fri, 07 Nov 2025 02:35:40 GMT
-      content-length:
-      - '0'
-      connection:
-      - keep-alive
-      server:
-      - cloudflare
-      location:
-      - https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(october%202025).csv
-      strict-transport-security:
-      - max-age=604800
-      x-frame-options:
-      - SAMEORIGIN
-      x-content-type-options:
-      - sniff
-      cf-cache-status:
-      - DYNAMIC
-      cf-ray:
-      - 99a9704cbf57e6ce-MEL
-    body:
-      encoding: UTF-8
-      string: ''
-  recorded_at: Fri, 07 Nov 2025 02:35:40 GMT
-- request:
-    method: get
-    uri: https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/0/9B80EBFA44A993E6CA2579650017682A/$File/key%20to%20abbreviations%20and%20bsb%20numbers%20(october%202025).csv
+    uri: https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/key%20to%20abbreviations%20and%20bsb%20numbers.csv
     body:
       encoding: US-ASCII
       string: ''
@@ -52,30 +14,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      date:
-      - Fri, 07 Nov 2025 02:35:41 GMT
-      content-type:
-      - application/octet-stream
       content-length:
       - '5719'
-      connection:
-      - keep-alive
-      server:
-      - cloudflare
+      content-type:
+      - text/csv
+      content-md5:
+      - HviIHJgpwaUcgl+FdAjX3Q==
       last-modified:
-      - Sun, 02 Nov 2025 21:07:11 GMT
+      - Sun, 30 Nov 2025 14:01:53 GMT
       etag:
-      - W/"MTAtMDAwMi0wLUNBMjU4RDM2MDA3NDAzNUEtOUI4MEVCRkE0NEE5OTNFNkNBMjU3OTY1MDAxNzY4MkE="
-      strict-transport-security:
-      - max-age=604800
-      x-frame-options:
-      - SAMEORIGIN
-      x-content-type-options:
-      - sniff
-      cf-cache-status:
-      - DYNAMIC
-      cf-ray:
-      - 99a9704dadb89344-MEL
+      - '0x8DE301904300423'
+      server:
+      - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      x-ms-request-id:
+      - 9581ce5e-301e-0071-6fcd-67ad75000000
+      x-ms-version:
+      - '2009-09-19'
+      x-ms-lease-status:
+      - unlocked
+      x-ms-blob-type:
+      - BlockBlob
+      date:
+      - Sun, 07 Dec 2025 23:03:58 GMT
     body:
       encoding: UTF-8
       string: "BSB Owner,Owner Name,BSB Prefix\r\nABA,Auswide Bank Ltd,645\r\nABA,Auswide
@@ -152,5 +112,5 @@ http_interactions:
         Banking Corporation,74\r\nWCU,Warwick Credit Union Ltd (Trading as Darling
         Downs Bank),817\r\nWSE,Wise Australia Pty Ltd,774\r\nYOU,National Australia
         Bank Limited,670\r\n"
-  recorded_at: Fri, 07 Nov 2025 02:35:41 GMT
+  recorded_at: Sun, 07 Dec 2025 23:03:58 GMT
 recorded_with: VCR 6.3.1
