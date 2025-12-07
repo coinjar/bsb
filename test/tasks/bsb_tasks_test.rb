@@ -33,7 +33,7 @@ describe 'bsb tasks rake task', type: :task do
           assert(File.exist?(output_path))
 
           content = File.read(output_path)
-          assert(output.include?('BSB'))
+          assert(content.include?('BSB'))
           assert(!content.empty?)
         end
       end
