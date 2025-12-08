@@ -36,7 +36,7 @@ namespace :bsb do
   task :fetch_key_file, [:output_path] do |_t, args|
     args.with_defaults(output_path: 'tmp/key.csv')
 
-    url = 'https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getKeytoACSV?OpenAgent'
+    url = 'https://auspaynetbsbpublic.blob.core.windows.net/bsb-reports/key%20to%20abbreviations%20and%20bsb%20numbers.csv'
     user_agent = 'CoinJarBSBUpdater/1.0 (https://github.com/coinjar/bsb)'
 
     puts "Fetching CSV from #{url}..."
