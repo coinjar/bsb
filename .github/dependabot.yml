@@ -1,13 +1,6 @@
 version: 2
-registries:
 updates:
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
-    insecure-external-code-execution: allow
-    registries: "*"
-    groups:
-      dependencies:
-        patterns:
-          - "*"
     schedule:
       interval: "monthly"
