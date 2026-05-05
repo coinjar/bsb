@@ -8,6 +8,7 @@ gemspec
 gem 'bundler', '~> 2.0'
 gem 'csv'
 gem 'faraday'
+gem 'minitest-mock'
 gem 'minitest-stub-const'
 gem 'rake', '~> 13.0'
 gem 'rubocop'
