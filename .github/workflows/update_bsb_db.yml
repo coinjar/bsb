@@ -32,7 +32,7 @@ jobs:
         run: rm -f config/latest_update.json && rm -f ./tmp/key.csv
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: update-bsb-db
           title: "fix: Update BSB Database"
