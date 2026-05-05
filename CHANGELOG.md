@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.11](https://github.com/coinjar/bsb/compare/v1.4.10...v1.4.11) (2026-05-05)
+
+
+### Bug Fixes
+
+* Add minitest/mock as its own gem, for minitest 6+ ([#128](https://github.com/coinjar/bsb/issues/128)) ([31fcf2b](https://github.com/coinjar/bsb/commit/31fcf2bb2d44052e74099e261d68a5a5f102b29e))
+* Update BSB Database ([#126](https://github.com/coinjar/bsb/issues/126)) ([2a58a66](https://github.com/coinjar/bsb/commit/2a58a66e13046eeca0543eca1297910f42cdf1a2))
+
 ## [1.4.10](https://github.com/coinjar/bsb/compare/v1.4.9...v1.4.10) (2026-02-19)
 
 
