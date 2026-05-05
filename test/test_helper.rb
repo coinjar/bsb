@@ -2,6 +2,7 @@
 
 require 'bsb'
 require 'minitest/autorun'
+require 'minitest/mock'
 require 'minitest/stub_const'
 require 'vcr'
 
