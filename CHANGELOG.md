@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/coinjar/bsb/compare/v1.4.11...v1.5.0) (2026-06-01)
+
+
+### Features
+
+* Add Ruby 4.0 support ([#131](https://github.com/coinjar/bsb/issues/131)) ([6e684bc](https://github.com/coinjar/bsb/commit/6e684bc378ab0640810678a96241401d2ccf1f52))
+* Remove Ruby 3.2 support (EOL) ([#127](https://github.com/coinjar/bsb/issues/127)) ([08556c4](https://github.com/coinjar/bsb/commit/08556c4dad8d0746b471142c14f914d6ec3229e6))
+
+
+### Bug Fixes
+
+* Update BSB Database ([#139](https://github.com/coinjar/bsb/issues/139)) ([1cd15da](https://github.com/coinjar/bsb/commit/1cd15dac148529bdfe3f56296cc83bfaa6226ee7))
+
 ## [1.4.11](https://github.com/coinjar/bsb/compare/v1.4.10...v1.4.11) (2026-05-05)
 
 
