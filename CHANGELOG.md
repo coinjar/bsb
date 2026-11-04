@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.5.2](https://github.com/coinjar/bsb/compare/v1.5.1...v1.5.2) (2026-09-01)
+
+
+### Bug Fixes
+
+* Update BSB Database ([#143](https://github.com/coinjar/bsb/issues/143)) ([48eb4b6](https://github.com/coinjar/bsb/commit/48eb4b6b8692f8b41fd27ad6577c51889bd5fcc6))
+
+## [1.5.1](https://github.com/coinjar/bsb/compare/v1.5.0...v1.5.1) (2026-07-02)
+
+
+### Bug Fixes
+
+* Update BSB Database ([#140](https://github.com/coinjar/bsb/issues/140)) ([189c9ba](https://github.com/coinjar/bsb/commit/189c9babc7b1e6f8ce35fb431ec74a1db003bf3e))
+
+## [1.5.0](https://github.com/coinjar/bsb/compare/v1.4.11...v1.5.0) (2026-06-01)
+
+
+### Features
+
+* Add Ruby 4.0 support ([#131](https://github.com/coinjar/bsb/issues/131)) ([6e684bc](https://github.com/coinjar/bsb/commit/6e684bc378ab0640810678a96241401d2ccf1f52))
+* Remove Ruby 3.2 support (EOL) ([#127](https://github.com/coinjar/bsb/issues/127)) ([08556c4](https://github.com/coinjar/bsb/commit/08556c4dad8d0746b471142c14f914d6ec3229e6))
+
+
+### Bug Fixes
+
+* Update BSB Database ([#139](https://github.com/coinjar/bsb/issues/139)) ([1cd15da](https://github.com/coinjar/bsb/commit/1cd15dac148529bdfe3f56296cc83bfaa6226ee7))
+
+## [1.4.11](https://github.com/coinjar/bsb/compare/v1.4.10...v1.4.11) (2026-05-05)
+
+
+### Bug Fixes
+
+* Add minitest/mock as its own gem, for minitest 6+ ([#128](https://github.com/coinjar/bsb/issues/128)) ([31fcf2b](https://github.com/coinjar/bsb/commit/31fcf2bb2d44052e74099e261d68a5a5f102b29e))
+* Update BSB Database ([#126](https://github.com/coinjar/bsb/issues/126)) ([2a58a66](https://github.com/coinjar/bsb/commit/2a58a66e13046eeca0543eca1297910f42cdf1a2))
+
 ## [1.4.10](https://github.com/coinjar/bsb/compare/v1.4.9...v1.4.10) (2026-02-19)
 
 
